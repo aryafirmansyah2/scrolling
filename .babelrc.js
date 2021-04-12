@@ -12,5 +12,18 @@ module.exports = {
       '@emotion/babel-preset-css-prop',
     ],
   ],
-  plugins: ['@emotion/babel-plugin', 'babel-plugin-macros'],
+  plugins: [
+    '@emotion/babel-plugin',
+    'inline-react-svg',
+    'babel-plugin-macros',
+    [
+      'module-resolver',
+      {
+        alias: {
+          '@/components': './components',
+          '@/assets': './assets',
+        },
+      },
+    ],
+  ],
 };
