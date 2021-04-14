@@ -3,6 +3,8 @@ import Head from 'next/head';
 import Layout from '../components/Layout/Layout';
 import Hero from '@/components/Home/Hero';
 import CaseStudy from '@/components/Home/CaseStudy';
+import StimulusAds from '@/components/Home/StimulusAds';
+import CallToAction from '@/components/Home/CallToAction';
 
 export default function Home() {
   return (
@@ -14,6 +16,8 @@ export default function Home() {
       <Layout>
         <Hero />
         <CaseStudy />
+        <StimulusAds />
+        <CallToAction />
       </Layout>
     </>
   );

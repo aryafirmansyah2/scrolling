@@ -20,9 +20,10 @@ module.exports = {
       '4xl': '2rem',
       '5xl': '2.25rem',
       '6xl': '3rem',
-      '7xl': '3.5rem',
-      '8xl': '4rem',
-      '9xl': '5rem',
+      '7xl': '3.25rem',
+      '8xl': '3.5rem',
+      '9xl': '4rem',
+      '10xl': '5rem',
     },
     extend: {
       fontFamily: {
@@ -34,6 +35,7 @@ module.exports = {
           100: 'hsla(187,7%,21%,1)',
           200: 'hsla(0,0%,35%,1)',
           300: 'hsla(0,0%,65%,1)',
+          400: 'hsla(0,0%,90%,1)',
         },
         black: 'hsla(0,0%,7%,1)',
         red: {
@@ -43,6 +45,7 @@ module.exports = {
           500: 'hsla(145,94%,44%,1)',
         },
         brown: {
+          300: 'hsla(29,35%,38%,1)',
           500: 'hsla(45,100%,31%,1)',
         },
         cream: {

@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Container from '../Common/Container';
 import Grid from '../Common/Grid';
 
-const Section = tw.section`h-screen w-full bg-gray-100`;
+const Section = tw.section`h-screen w-full bg-gray-100 relative z-10`;
 const Caption = tw.div`col-span-9 col-start-1 row-start-1 flex flex-col z-10`;
 const WrapTitle = tw.div`flex flex-col w-full my-auto`;
 const WrapImgHero = tw.div`col-span-5 col-end-13 row-start-1 `;

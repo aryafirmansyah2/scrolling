@@ -51,9 +51,8 @@ const customStyles = css`
     font-family: 'TT Commons', 'sans-serif';
   }
   main {
-    scroll-snap-type: mandatory;
-    overflow-y: scroll;
     scroll-snap-type: y mandatory;
+    overflow: auto;
   }
   section {
     scroll-snap-align: start;
