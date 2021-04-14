@@ -9,7 +9,6 @@ module.exports = {
           importSource: '@emotion/react',
         },
       },
-      '@emotion/babel-preset-css-prop',
     ],
   ],
   plugins: [

@@ -2,6 +2,7 @@ import 'twin.macro';
 import Head from 'next/head';
 import Layout from '../components/Layout/Layout';
 import Hero from '@/components/Home/Hero';
+import CaseStudy from '@/components/Home/CaseStudy';
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       </Head>
       <Layout>
         <Hero />
+        <CaseStudy />
       </Layout>
     </>
   );

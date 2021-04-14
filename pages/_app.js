@@ -1,4 +1,4 @@
-import { GlobalStyles } from 'twin.macro';
+import GlobalStyles from '@/styles/GlobalStyles';
 
 const App = ({ Component, pageProps }) => (
   <>
@@ -6,4 +6,5 @@ const App = ({ Component, pageProps }) => (
     <Component {...pageProps} />
   </>
 );
+
 export default App;

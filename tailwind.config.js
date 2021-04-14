@@ -25,6 +25,10 @@ module.exports = {
       '9xl': '5rem',
     },
     extend: {
+      fontFamily: {
+        common: ['TT Commons', 'sans-serif'],
+        woodland: ['PP Woodland', 'sans-serif'],
+      },
       colors: {
         gray: {
           100: 'hsla(187,7%,21%,1)',
@@ -40,6 +44,9 @@ module.exports = {
         },
         brown: {
           500: 'hsla(45,100%,31%,1)',
+        },
+        cream: {
+          500: 'hsla(29,49%,87%,1)',
         },
       },
     },

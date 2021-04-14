@@ -6,7 +6,7 @@ import Container from '../Common/Container';
 import Grid from '../Common/Grid';
 
 const Section = tw.section`h-screen w-full bg-gray-100`;
-const Caption = tw.div`col-span-8 col-start-1 row-start-1 flex flex-col`;
+const Caption = tw.div`col-span-9 col-start-1 row-start-1 flex flex-col z-10`;
 const WrapTitle = tw.div`flex flex-col w-full my-auto`;
 const WrapImgHero = tw.div`col-span-5 col-end-13 row-start-1 `;
 const ImgHero = styled.div`
@@ -15,8 +15,8 @@ const ImgHero = styled.div`
     height: 70vh;
   `}
 `;
-const Subtitle = tw.h5`text-4xl text-white opacity-75 leading-6`;
-const Title = tw.h1`text-7xl leading-normal text-white`;
+const Subtitle = tw.h5`text-4xl text-white opacity-75 leading-6 font-common font-light`;
+const Title = tw.h1`text-7xl leading-normal text-white font-woodland font-bold`;
 
 const ImageNext = tw(Image)``;
 
