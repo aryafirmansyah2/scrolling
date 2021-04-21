@@ -15,25 +15,29 @@ const customStyles = css`
     font-style: normal;
     font-weight: 400;
 
-    src: local('TT Commons Light'), url(/fonts/common/TTCommons-Light.ttf);
+    src: local('TT Commons Light'), url(/fonts/common/TTCommons-Light.ttf),
+      url(/fonts/common/TTCommons-Light.woff);
   }
   @font-face {
     font-family: 'TT Commons';
     font-style: normal;
     font-weight: 500;
-    src: local('TT Commons Regular'), url(/fonts/common/TTCommons-Regular.ttf);
+    src: local('TT Commons Regular'), url(/fonts/common/TTCommons-Regular.ttf),
+      url(/fonts/common/TTCommons-Regular.woff);
   }
   @font-face {
     font-family: 'TT Commons';
     font-style: normal;
     font-weight: 600;
-    src: local('TT Commons Medium'), url(/fonts/common/TTCommons-Medium.ttf);
+    src: local('TT Commons Medium'), url(/fonts/common/TTCommons-Medium.ttf),
+      url(/fonts/common/TTCommons-Medium.woff);
   }
   @font-face {
     font-family: 'TT Commons';
     font-style: normal;
     font-weight: 700;
-    src: local('TT Commons Bold'), url(/fonts/common/TTCommons-Bold.ttf);
+    src: local('TT Commons Bold'), url(/fonts/common/TTCommons-Bold.ttf),
+      url(/fonts/common/TTCommons-Bold.woff);
   }
   @font-face {
     font-family: 'PP Woodland';
@@ -53,11 +57,11 @@ const customStyles = css`
     font-family: 'TT Commons', 'sans-serif';
   }
   main {
-    scroll-snap-type: y mandatory;
-    overflow: auto;
+    ${'' /* scroll-snap-type: y mandatory; */}
+    ${'' /* overflow: auto; */}
   }
   section {
-    scroll-snap-align: start;
+    ${'' /* scroll-snap-align: start; */}
   }
 `;
 
