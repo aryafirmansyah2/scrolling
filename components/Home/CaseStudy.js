@@ -4,161 +4,104 @@ import tw, { styled, css } from 'twin.macro';
 import Container from '../Common/Container';
 import Grid from '../Common/Grid';
 
-const Section = styled.section(props => [
-  tw`w-full h-screen bg-cover bg-no-repeat `,
-  css`
-    background: ${props.color};
-  `,
-]);
-const BgSection = tw.div`w-full h-full bg-cream-500 bg-opacity-50`;
-const Caption = tw.div`col-span-7 flex`;
-const WrapCase = tw.div`flex flex-col w-full items-start my-auto`;
-const Subtitle = tw.p`text-4xl leading-9  font-light mb-2 opacity-75`;
-const Title = tw.h1`text-7xl leading-tight `;
-const ButtonOutline = tw.button`border  rounded-2xl  py-4 px-11 mt-4  font-light`;
+import IconLike from '@/assets/icon/like.svg';
+import IconArrow from '@/assets/icon/arrow-fill-down.svg';
 
-const HeroImg = tw.div`col-span-5 flex h-full`;
+import HeadingOne from '../Typography/HeadingOne';
+import TextBody from '../Typography/TextBody';
+import HeadingFive from '../Typography/HeadingFive';
+import listCase from '@/data/listCase';
+import Link from 'next/link';
+
+const Section = styled.section(props => [
+  tw`w-full h-screen bg-cover bg-no-repeat bg-white `,
+]);
+const Caption = tw.div`col-span-7 flex flex-col my-auto row-start-1`;
+const LikeProject = tw.div`flex items-center w-full mb-20`;
+const Circle = tw.span`rounded-full bg-blue-700 mr-4 p-4`;
+const WrapCase = tw.div`flex flex-col w-full items-start `;
+const Subtitle = tw.p`text-4xl leading-9  font-light mb-2 opacity-75`;
+const Title = tw(HeadingOne)``;
+const ButtonOutline = tw.button`border  text-2xl rounded-2xl  py-3 px-11 mt-12  font-normal`;
+
+const HeroImg = tw.div`col-span-6 flex flex-col h-auto row-start-1 relative`;
 const ImgItem = styled.div`
   ${tw`w-full relative my-auto`}
   ${css`
-    height: 35rem;
+    height: 25rem;
   `}
 `;
 const Img = tw(Image)``;
-const Eclipse = styled.img(props => [
-  tw`absolute z-0`,
+const BgColor = styled.div(props => [
+  tw`  absolute top-10 -right-4 w-10/12 rounded-2xl`,
   css`
-    top: ${props.top};
-    left: ${props.left};
-    bottom: ${props.bottom};
-    right: ${props.right};
-    filter: ${props.filter};
-    -webkit-filter: ${props.filter};
+    background-color: ${props.bgColor};
+    height: 90vh;
   `,
 ]);
+const ButtonDown = tw.button`w-64 h-20 absolute flex flex-col items-center justify-center mx-auto bottom-14 right-20`;
+
 const CaseStudy = () => {
   return (
     <>
-      <Section color="hsla(29,35%,38%,1)" id="telkom-school">
-        <Container tw="h-full relative">
-          <Eclipse
-            src="/assets/pattern/case-one/eclipse-1.svg"
-            top="-15%"
-            left="-10%"
-            filter="blur(400px)"
-          />
-          <Eclipse
-            src="/assets/pattern/case-one/eclipse-2.svg"
-            bottom="0"
-            left="10%"
-            filter="blur(400px)"
-          />
-          <Grid tw="h-full z-10">
-            <Caption>
-              <WrapCase>
-                <Subtitle tw="text-white">Telkom School</Subtitle>
-                <Title tw="text-white">
-                  Integrated and technology-based school management.
-                </Title>
-                <ButtonOutline tw="text-white border-white">
-                  Read case study
-                </ButtonOutline>
-              </WrapCase>
-            </Caption>
-            <HeroImg>
-              <ImgItem>
-                <Img
-                  src="/assets/content/hero-project-1.png"
-                  layout="fill"
-                  objectFit="fill"
-                  quality={100}
-                />
-              </ImgItem>
-            </HeroImg>
-          </Grid>
-        </Container>
-      </Section>
-      <Section color="hsla(205,100%,95%,1)" id="duit-kas" tw="z-10 relative">
-        <Container tw="h-full">
-          <Grid tw="h-full">
-            <Caption>
-              <WrapCase>
-                <Subtitle tw="text-black">Duitkas.com</Subtitle>
-                <Title tw="text-black">
-                  Financial activity management application
-                </Title>
-                <ButtonOutline tw="text-black border-black">
-                  Read case study
-                </ButtonOutline>
-              </WrapCase>
-            </Caption>
-            <HeroImg>
-              <ImgItem>
-                <Img
-                  src="/assets/content/hero-project-2.png"
-                  layout="fill"
-                  objectFit="fill"
-                  quality={100}
-                />
-              </ImgItem>
-            </HeroImg>
-          </Grid>
-        </Container>
-      </Section>
-      <Section color="hsla(32,100%,50%,1)" id="bni-pfm" tw="z-10 relative">
-        <Container tw="h-full">
-          <Grid tw="h-full">
-            <Caption>
-              <WrapCase>
-                <Subtitle tw="text-white">BNI PFM</Subtitle>
-                <Title tw="text-white">
-                  BNI internet banking personal finance management facility
-                </Title>
-                <ButtonOutline tw="text-white border-white">
-                  Read case study
-                </ButtonOutline>
-              </WrapCase>
-            </Caption>
-            <HeroImg>
-              <ImgItem>
-                <Img
-                  src="/assets/content/hero-project-3.png"
-                  layout="fill"
-                  objectFit="fill"
-                  quality={100}
-                />
-              </ImgItem>
-            </HeroImg>
-          </Grid>
-        </Container>
-      </Section>
-      <Section color="hsla(218,98%,29%,1)" id="arema-fc" tw="z-10 relative">
-        <Container tw="h-full">
-          <Grid tw="h-full">
-            <Caption>
-              <WrapCase>
-                <Subtitle tw="text-white">Arema FC</Subtitle>
-                <Title tw="text-white">
-                  Official website club activities and store management
-                </Title>
-                <ButtonOutline tw="text-white border-white">
-                  Read case study
-                </ButtonOutline>
-              </WrapCase>
-            </Caption>
-            <HeroImg>
-              <ImgItem>
-                <Img
-                  src="/assets/content/hero-project-4.png"
-                  layout="fill"
-                  objectFit="fill"
-                  quality={100}
-                />
-              </ImgItem>
-            </HeroImg>
-          </Grid>
-        </Container>
-      </Section>
+      {listCase.map((listCases, index) => (
+        <Section color="hsla(29,35%,38%,1)" id={listCases.id} key={index}>
+          <Container tw="h-full relative">
+            <img
+              src="/assets/pattern/home/bg-hero-circle-black.svg"
+              tw="absolute bottom-0 right-0 top-6"
+              alt=""
+            />
+            <img
+              src="/assets/pattern/home/eclipse-triple.svg"
+              tw="absolute right-44 top-3/4 z-10 h-20"
+              alt=""
+            />
+            <Grid tw="h-full ">
+              <Caption>
+                <LikeProject>
+                  <Circle>
+                    <IconLike tw="h-4 w-4" />
+                  </Circle>
+                  <TextBody isNormal>
+                    *Don't forget to like this project on{' '}
+                    <strong tw="text-blue-700 font-semibold">behance</strong>
+                  </TextBody>
+                </LikeProject>
+                <WrapCase>
+                  <Subtitle tw="text-black">{listCases.company}</Subtitle>
+                  <Title isCommon tw="text-black font-bold leading-tight">
+                    {listCases.name}
+                  </Title>
+                  <Link href={listCases.url} passHref>
+                    <ButtonOutline tw="text-black border-black">
+                      Read on behance
+                    </ButtonOutline>
+                  </Link>
+                </WrapCase>
+              </Caption>
+              <HeroImg>
+                <BgColor bgColor={listCases.color} />
+                <ImgItem>
+                  <Img
+                    src={listCases.img}
+                    layout="fill"
+                    objectFit="fill"
+                    quality={100}
+                  />
+                </ImgItem>
+                <ButtonDown>
+                  <IconArrow tw="h-6 w-6 fill-current text-black z-10" />
+
+                  <HeadingFive isRegular tw="z-10 text-black mt-2">
+                    Scroll Down
+                  </HeadingFive>
+                </ButtonDown>
+              </HeroImg>
+            </Grid>
+          </Container>
+        </Section>
+      ))}
     </>
   );
 };

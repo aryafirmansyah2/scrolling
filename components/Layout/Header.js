@@ -6,7 +6,7 @@ import LogoInagata from '@/assets/logo/inagata.svg';
 import IconHamburger from '@/assets/icon/hamburger.svg';
 
 const Nav = tw.nav`w-full bg-transparent fixed top-0 right-0 left-0 z-30`;
-const Flex = tw.div`flex justify-between w-full pt-8`;
+const Flex = tw.div`flex justify-between w-full pt-14`;
 
 const Header = () => {
   return (

@@ -4,46 +4,92 @@ import Image from 'next/image';
 
 import Container from '../Common/Container';
 import Grid from '../Common/Grid';
+import HeadingThree from '../Typography/HeadingThree';
 
-const Section = tw.section`h-screen w-full bg-gray-100 relative z-10`;
-const Caption = tw.div`col-span-9 col-start-1 row-start-1 flex flex-col z-10`;
-const WrapTitle = tw.div`flex flex-col w-full my-auto`;
-const WrapImgHero = tw.div`col-span-5 col-end-13 row-start-1 `;
-const ImgHero = styled.div`
-  ${tw`w-full relative`}
+import IconCombinedShape from '@/assets/icon/combined-shape.svg';
+import IconArrow from '@/assets/icon/arrow-fill-down.svg';
+import HeadingFour from '../Typography/HeadingFour';
+import HeadingFive from '../Typography/HeadingFive';
+
+const Section = tw.section`h-screen w-full bg-white relative z-10 overflow-x-hidden`;
+const Caption = tw.div`col-span-9 col-start-1 row-start-1 flex flex-col `;
+const WrapTitle = tw.div`flex flex-col w-full mt-64`;
+
+const Subtitle = tw(
+  HeadingThree,
+)`text-4xl text-black opacity-75 leading-6 font-common font-light`;
+const Title = styled.h1`
+  ${tw`text-10xl leading-none text-black font-common font-bold mt-5 z-10`}
+`;
+const Outline = styled.span`
   ${css`
-    height: 70vh;
+    color: black;
+    -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: black;
   `}
 `;
-const Subtitle = tw.h5`text-4xl text-white opacity-75 leading-6 font-common font-light`;
-const Title = tw.h1`text-7xl leading-normal text-white font-woodland font-bold`;
+const WrapService = tw.div`col-span-full flex flex-col items-start justify-start mt-auto`;
+const Service = tw.div`flex`;
+const Work = tw.div`bg-black-200 rounded-2xl p-4  mr-7`;
+const ServiceCaption = tw(HeadingFour)`text-black`;
+const WrapButton = tw.div`w-full flex items-start justify-end`;
+const ButtonDown = tw.button`w-64 h-20 relative flex flex-col items-center justify-center`;
+const ImgButton = tw.img`absolute bottom-0 left-0 right-0 w-full`;
 
 const ImageNext = tw(Image)``;
 
 const Hero = () => {
   return (
     <Section id="hero">
-      <Container tw="flex pt-32 h-full">
-        <Grid tw="mt-auto mb-24">
+      <Container tw="flex h-full relative">
+        <img
+          src="/assets/pattern/home/bg-hero.svg"
+          tw="absolute bottom-0 -right-36 -top-14"
+          alt=""
+        />
+        <img
+          src="/assets/pattern/home/bg-hero-circle.svg"
+          tw="absolute bottom-0 -right-36 top-6"
+          alt=""
+        />
+        <img
+          src="/assets/pattern/home/eclipse-triple.svg"
+          tw="absolute right-24 bottom-1/3"
+          alt=""
+        />
+        <Grid>
           <Caption>
             <WrapTitle>
-              <Subtitle>7th year celebration.</Subtitle>
+              <Subtitle isCommonLight>7th year celebration.</Subtitle>
               <Title>
-                Make your digital experience grow soulfully to the next level
+                Make your digital experience grow soulfully
+                <Outline> to the next level</Outline>
               </Title>
             </WrapTitle>
           </Caption>
-
-          <WrapImgHero>
-            <ImgHero>
-              <ImageNext
-                src="/assets/content/hero-1.png"
-                quality={100}
-                layout="fill"
-                objectFit="contain"
-              />
-            </ImgHero>
-          </WrapImgHero>
+          <WrapService>
+            <Service>
+              <Work>
+                <IconCombinedShape tw="h-9 w-9" />
+              </Work>
+              <ServiceCaption isCommon>
+                Website Development / Mobile Development / <br /> Visual Design
+              </ServiceCaption>
+            </Service>
+            <WrapButton>
+              <ButtonDown>
+                <ImgButton
+                  src="/assets/pattern/subtract.png"
+                  tw="h-20 w-full"
+                />
+                <IconArrow tw="h-6 w-6 fill-current text-white z-10" />
+                <HeadingFive isRegular tw="z-10 text-white mt-2">
+                  Scroll Down
+                </HeadingFive>
+              </ButtonDown>
+            </WrapButton>
+          </WrapService>
         </Grid>
       </Container>
     </Section>
