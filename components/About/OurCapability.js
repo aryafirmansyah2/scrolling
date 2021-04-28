@@ -5,13 +5,13 @@ import Grid from '../Common/Grid';
 import TextBody from '../Typography/TextBody';
 import HeadingThree from '../Typography/HeadingThree';
 
-const Section = tw.section`w-full bg-white text-black min-h-screen flex`;
+const Section = tw.section`w-full bg-white text-black min-h-screen flex py-28`;
 const WrapTitle = tw.div`col-span-full py-16 flex flex-col`;
 const Title = tw.h1`text-8xl text-brown-500 text-center font-woodland font-bold mb-14`;
 
-const Paragraf = tw(TextBody)`text-2.5xl text-center w-10/12 mx-auto`;
+const Paragraf = tw(TextBody)`text-2.5xl text-center w-full lg:w-10/12 mx-auto`;
 
-const WrapSubtitle = tw.div`col-span-full grid grid-cols-3 gap-16`;
+const WrapSubtitle = tw.div`col-span-full grid grid-cols-1 lg:grid-cols-3 gap-16`;
 const FlexColumn = tw.div`flex flex-col`;
 const Subtitle = tw.p`text-2xl  text-left `;
 const HeadingCapability = tw(HeadingThree)`mb-5`;

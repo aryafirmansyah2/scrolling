@@ -3,7 +3,7 @@ import tw from 'twin.macro';
 import Container from '../Common/Container';
 import Grid from '../Common/Grid';
 
-const Section = tw.section`h-screen w-full bg-white relative z-10`;
+const Section = tw.section`h-screen w-full bg-cream-500 relative z-10`;
 const MainContent = tw.div`col-span-full`;
 const HeroTeam = () => {
   return (

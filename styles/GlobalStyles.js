@@ -55,10 +55,12 @@ const customStyles = css`
   }
   body {
     font-family: 'TT Commons', 'sans-serif';
+    ${tw`overflow-x-hidden`}
   }
   main {
     ${'' /* scroll-snap-type: y mandatory; */}
     ${'' /* overflow: auto; */}
+    ${tw`overflow-x-hidden`}
   }
   section {
     ${'' /* scroll-snap-align: start; */}

@@ -8,11 +8,10 @@ import HeadingOne from '../Typography/HeadingOne';
 import HeadingTwo from '../Typography/HeadingTwo';
 
 import listProject from '@/data/listProject';
+import useResponsive from '@/utils/useResponsive';
 
 const Section = tw.section`w-full bg-white py-32`;
-const Title = tw(
-  HeadingOne,
-)`text-brown-gold col-span-full text-center mt-28 mb-20`;
+const Title = tw(HeadingOne)`text-brown-gold col-span-full text-center mt-28 mb-20`;
 const Filter = tw.div`col-span-full flex mb-4`;
 const FilterItem = HeadingTwo.withComponent('button');
 const WrapGallery = tw.div`col-span-full `;
@@ -61,7 +60,11 @@ const WrapImg = styled.div(({ isLong, isShort }) => [
 const Img = tw(Image)`w-full h-full`;
 const Subtitle = tw(HeadingFour)`text-gray-300 uppercase mt-7`;
 const TitleProject = tw(HeadingTwo)`text-black capitalize`;
+
+const GalleryMobile = tw.div`flex flex-col`;
+const ItemMobile = tw.div`flex flex-col w-full mb-20`;
 const ListWork = () => {
+  const { isDesktop } = useResponsive();
   return (
     <Section>
       <Container>
@@ -82,24 +85,31 @@ const ListWork = () => {
             </FilterItem>
           </Filter>
           <WrapGallery>
-            <Gallery>
-              {listProject.map((listProjects, index) => (
-                <Item key={index}>
-                  <WrapImg
-                    isLong={listProjects.scale === 'long'}
-                    isShort={listProjects.scale === 'short'}
-                  >
-                    <Img
-                      src={listProjects.img}
-                      layout="fill"
-                      objectFit="cover"
-                    />
-                  </WrapImg>
-                  <Subtitle isCommon>{listProjects.name}</Subtitle>
-                  <TitleProject isCommon>{listProjects.subname}</TitleProject>
-                </Item>
-              ))}
-            </Gallery>
+            {isDesktop ? (
+              <Gallery>
+                {listProject.map((listProjects, index) => (
+                  <Item key={index}>
+                    <WrapImg isLong={listProjects.scale === 'long'} isShort={listProjects.scale === 'short'}>
+                      <Img src={listProjects.img} layout="fill" objectFit="cover" />
+                    </WrapImg>
+                    <Subtitle isCommon>{listProjects.name}</Subtitle>
+                    <TitleProject isCommon>{listProjects.subname}</TitleProject>
+                  </Item>
+                ))}
+              </Gallery>
+            ) : (
+              <GalleryMobile>
+                {listProject.map((listProjects, index) => (
+                  <ItemMobile key={index}>
+                    <WrapImg isLong={listProjects.scale === 'long'} isShort={listProjects.scale === 'short'}>
+                      <Img src={listProjects.img} layout="fill" objectFit="cover" />
+                    </WrapImg>
+                    <Subtitle isCommon>{listProjects.name}</Subtitle>
+                    <TitleProject isCommon>{listProjects.subname}</TitleProject>
+                  </ItemMobile>
+                ))}
+              </GalleryMobile>
+            )}
           </WrapGallery>
         </Grid>
       </Container>

@@ -7,7 +7,7 @@ const TextBody = styled.p(
     isLgRegular && tw`text-8xl `,
     isLgLight && tw`text-8xl  font-light`,
     isNormalLight && tw`text-2.5xl font-light`,
-    isNormal && tw`text-2xl`,
+    isNormal && tw`text-base lg:text-2xl`,
   ],
 );
 

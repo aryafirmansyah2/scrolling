@@ -10,13 +10,13 @@ import Link from 'next/link';
 
 const Section = tw.section`min-h-screen w-full bg-white relative z-10 pt-36 pb-40`;
 const TextContent = tw.div`col-span-10 col-start-2 mb-12`;
-const ItemTeam = tw.div`col-span-4 flex flex-col`;
+const ItemTeam = tw.div`col-span-full lg:col-span-4 flex flex-col`;
 const ImgBg = tw.div`w-full aspect-h-1 bg-gray-500 mb-12`;
 const ImgTeam = tw.img`w-full h-full`;
 const ItemCaption = tw.div`flex flex-col`;
 const NameTeam = tw(HeadingTwo)`text-black mb-1`;
 const PositionTeam = tw(HeadingFour)`text-gray-200 mb-7 capitalize`;
-const QuoteTeam = tw(TextBody)`text-black mb-7 text-justify`;
+const QuoteTeam = tw(TextBody)`text-black mb-7 text-justify text-lg`;
 const SocialTeam = tw.div`flex w-full space-x-4`;
 const SocialLink = tw.a`font-semibold text-base uppercase`;
 const ListTeam = () => {
@@ -37,7 +37,7 @@ const ListTeam = () => {
               </ImgBg>
               <ItemCaption>
                 <NameTeam isCommon>{listTeams.name}</NameTeam>
-                <PositionTeam>{listTeams.position}</PositionTeam>
+                <PositionTeam isCommon>{listTeams.position}</PositionTeam>
                 <QuoteTeam isNormal>{listTeams.quote}</QuoteTeam>
                 <SocialTeam>
                   <Link href="/" passHref>

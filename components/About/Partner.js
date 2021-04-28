@@ -8,16 +8,9 @@ import HeadingOne from '../Typography/HeadingOne';
 const Section = tw.section`w-full bg-white text-black min-h-screen flex`;
 const WrapTitle = tw.div`col-span-full pb-16 flex flex-col`;
 const Title = tw(HeadingOne)`text-brown-500 text-center`;
-const WrapPartner = tw.div`col-span-full flex items-center justify-between flex-wrap`;
-// const WrapImg = styled.div`
-//   ${tw`h-20 aspect-w-1 `}
-//   ${css`
-//     min-width: 5rem;
-//     /* width: auto; */
-//   `}
-// `;
+const WrapPartner = tw.div`col-span-full flex items-center lg:justify-between flex-wrap`;
 const ImgPartner = styled.img`
-  ${tw`h-auto w-auto aspect-w-1 my-4 mx-12`}
+  ${tw`h-auto w-auto aspect-w-1 my-4 mx-6 lg:mx-12`}
   ${css`
     max-height: 5rem;
     /* max-width: 170px; */

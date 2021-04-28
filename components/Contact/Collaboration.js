@@ -7,7 +7,7 @@ import TextBody from '../Typography/TextBody';
 import Button from '../Common/Button';
 
 const Section = tw.section`w-full bg-white pt-20 pb-24`;
-const ButtonCta = tw.button`col-span-6 px-3`;
+const ButtonCta = tw.button`col-span-full lg:col-span-6 px-3`;
 const Title = tw(HeadingOne)`text-black`;
 const Subtitle = tw(TextBody)`text-black mt-2`;
 const Maping = tw.div`col-span-full h-screen bg-gray-200 flex items-center justify-center mt-44`;
@@ -26,10 +26,10 @@ const Collaboration = () => {
             <Title isWoodland>Intership Program</Title>
             <Subtitle isNormal>Requirement & Downloadebles</Subtitle>
           </ButtonCta>
-          <ButtonCta tw="col-start-1 row-start-2">
+          <ButtonCta tw="col-start-1 lg:row-start-2">
             <Title isWoodland>Carier</Title>
           </ButtonCta>
-          <ButtonCta tw="col-end-13 row-start-2">
+          <ButtonCta tw="col-end-13 lg:row-start-2">
             <Title isWoodland>Talks & Workshop</Title>
           </ButtonCta>
           <Maping>map here</Maping>

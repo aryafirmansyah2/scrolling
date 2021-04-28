@@ -5,10 +5,10 @@ import Grid from '../Common/Grid';
 import HeadingThree from '../Typography/HeadingThree';
 import TextBody from '../Typography/TextBody';
 
-const Section = tw.section`w-full bg-white py-36`;
-const MainContent = tw.div`col-span-10 col-start-2 flex items-start `;
-const Address = tw.address`min-w-min ml-auto not-italic`;
-const LinkContact = tw.a`font-common text-2xl `;
+const Section = tw.section`w-full bg-gray-500 py-36`;
+const MainContent = tw.div`col-span-full flex-col lg:(col-span-10 col-start-2 flex-row items-start)  flex  `;
+const Address = tw.address`min-w-min ml-28 mt-24 lg:ml-auto not-italic`;
+const LinkContact = tw.a`font-common text-4xl lg:text-2xl `;
 const Identity = () => {
   return (
     <Section id="identity">
@@ -17,10 +17,10 @@ const Identity = () => {
           <MainContent>
             <img src="/assets/logo/inagata-color.svg" tw="h-24 w-auto" />
             <Address>
-              <HeadingThree isCommon tw="font-medium">
+              <HeadingThree isCommon tw="font-medium ">
                 PT Ina Gata Persada
               </HeadingThree>
-              <TextBody isNormal tw="mt-4 mb-6">
+              <TextBody isNormal tw="mt-4 mb-6 text-4xl lg:text-2xl">
                 Perum Griya Shanta Blok L.110, <br />
                 Malang - Indonesia
                 <br />

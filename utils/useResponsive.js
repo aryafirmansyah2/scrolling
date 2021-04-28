@@ -24,9 +24,9 @@ function useResponsive() {
   }, []);
 
   return {
-    isDesktop: isClient ? isDesktop : true,
+    isDesktop: isClient ? isDesktop : false,
     isTablet: isClient ? isTablet : false,
-    isMobile: isClient ? isMobile : false,
+    isMobile: isClient ? isMobile : true,
     isOnlyMobile: isClient ? isOnlyMobile : false,
   };
 }

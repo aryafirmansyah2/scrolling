@@ -3,6 +3,7 @@ import React from 'react';
 // component
 import Layout from '@/components/Layout/Layout';
 import ListWork from '@/components/Work/ListWork';
+import CallToAction from '@/components/Home/CallToAction';
 
 const Contact = () => {
   return (
@@ -13,6 +14,7 @@ const Contact = () => {
       </Head>
       <Layout>
         <ListWork />
+        <CallToAction />
       </Layout>
     </>
   );
