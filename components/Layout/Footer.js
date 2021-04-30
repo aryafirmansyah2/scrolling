@@ -4,7 +4,7 @@ import tw from 'twin.macro';
 import Container from '../Common/Container';
 import Grid from '../Common/Grid';
 
-const Section = tw.section`w-full bg-gray-100 flex flex-col pt-3`;
+const Section = tw.footer`w-full bg-gray-100 flex flex-col pt-3`;
 const WidgetFooter = tw(Grid)`py-14 text-gray-400 `;
 const Sitemap = tw.div`col-span-5 lg:col-span-2 flex flex-col`;
 const Title = tw.h5`text-lg text-white uppercase mb-3`;
@@ -69,26 +69,15 @@ const Footer = () => {
       <hr tw=" border-black w-full" />
       <Container tw="pt-10 pb-8">
         <Flex tw="flex-col lg:flex-row">
-          <p tw="text-lg font-normal text-gray-400">
-            2021 INAGATA TECHNOSMITH. All Rights Reserved.
-          </p>
+          <p tw="text-lg font-normal text-gray-400">2021 INAGATA TECHNOSMITH. All Rights Reserved.</p>
           <span tw="flex justify-between mt-4 lg:(justify-evenly mt-0) w-6/12">
-            <a
-              href=""
-              tw="font-semibold uppercase text-lg opacity-50 text-gray-400 lg:( opacity-100)"
-            >
+            <a href="" tw="font-semibold uppercase text-lg opacity-50 text-gray-400 lg:( opacity-100)">
               Instagram
             </a>
-            <a
-              href=""
-              tw="font-semibold uppercase text-lg opacity-50 text-gray-400 lg:( opacity-100)"
-            >
+            <a href="" tw="font-semibold uppercase text-lg opacity-50 text-gray-400 lg:( opacity-100)">
               Dribble
             </a>
-            <a
-              href=""
-              tw="font-semibold uppercase text-lg opacity-50 text-gray-400 lg:( opacity-100)"
-            >
+            <a href="" tw="font-semibold uppercase text-lg opacity-50 text-gray-400 lg:( opacity-100)">
               Behance
             </a>
           </span>

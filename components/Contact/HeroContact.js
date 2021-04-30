@@ -9,7 +9,7 @@ import HeadingOne from '../Typography/HeadingOne';
 import TextBody from '../Typography/TextBody';
 
 const Section = tw.section`bg-white w-full h-screen flex`;
-const Caption = tw.div`flex flex-col col-span-full row-start-2 pb-12 lg:(col-span-6 row-start-1) justify-end `;
+const Caption = tw.div`flex z-10 flex-col col-span-full row-start-2 pb-12 lg:(col-span-6 row-start-1) justify-end `;
 const Title = tw(HeadingOne)`text-black font-bold leading-tight text-9.5xl w-10/12 lg:(w-full leading-normal)`;
 const Subtitle = tw(TextBody)`text-2xl text-black opacity-75   w-full lg:(w-10/12 mt-7)`;
 const ImgHero = styled.div`
@@ -26,8 +26,12 @@ const HeroContact = () => {
   return (
     <Section id="hero-contact">
       <Container tw="relative flex">
-        {isDesktop && <img src="/assets/pattern/contact/eclipse.svg" tw="absolute top-0 left-0" />}
-        <img src="/assets/pattern/contact/tablet/eclipse.svg" tw="absolute -top-10 left-0" />
+        {isDesktop ? (
+          <img src="/assets/pattern/contact/eclipse.svg" tw="absolute top-0 left-0 " />
+        ) : (
+          <img src="/assets/pattern/contact/tablet/eclipse.svg" tw="absolute -top-10 left-0" />
+        )}
+
         <Grid tw="my-auto">
           <Caption>
             <Title isCommon>

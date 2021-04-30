@@ -1,4 +1,4 @@
-import 'twin.macro';
+import tw from 'twin.macro';
 import Head from 'next/head';
 import Layout from '../components/Layout/Layout';
 import Hero from '@/components/Home/Hero';
@@ -16,8 +16,10 @@ export default function Home() {
       <Layout>
         <Hero />
         <CaseStudy />
-        <StimulusAds />
-        <CallToAction />
+        <section tw="w-full h-screen flex flex-col">
+          <StimulusAds />
+          <CallToAction />
+        </section>
       </Layout>
     </>
   );

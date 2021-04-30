@@ -12,10 +12,9 @@ import TextBody from '../Typography/TextBody';
 import HeadingFive from '../Typography/HeadingFive';
 import listCase from '@/data/listCase';
 import Link from 'next/link';
+import useResponsive from '@/utils/useResponsive';
 
-const Section = styled.section(props => [
-  tw`w-full h-screen bg-cover bg-no-repeat bg-white `,
-]);
+const Section = styled.section(props => [tw`w-full h-screen bg-cover bg-no-repeat bg-white `]);
 const Caption = tw.div`col-span-full lg:col-span-7 flex flex-col my-auto row-start-1`;
 const LikeProject = tw.div`flex items-center w-full mt-28 mb-12 lg:(mb-20)`;
 const Circle = tw.span`rounded-full bg-blue-700 mr-4 p-3 lg:(p-4)`;
@@ -48,10 +47,11 @@ const BgColor = styled.div(props => [
 const ButtonDown = tw.button`w-auto h-14 absolute flex flex-col items-center justify-center mx-auto bottom-0 right-0 lg:(bottom-14 right-20 w-64 h-20) `;
 
 const CaseStudy = () => {
+  const { isMobile } = useResponsive();
   return (
     <>
       {listCase.map((listCases, index) => (
-        <Section color="hsla(29,35%,38%,1)" id={listCases.id} key={index}>
+        <Section color="hsla(29,35%,38%,1)" id={listCases.id + ' scroll'} key={index}>
           <Container tw="h-full relative">
             <img
               src="/assets/pattern/home/bg-hero-circle-black.svg"
@@ -70,8 +70,7 @@ const CaseStudy = () => {
                     <IconLike tw="h-4 w-4" />
                   </Circle>
                   <TextBody isNormal>
-                    *Don't forget to like this project on{' '}
-                    <strong tw="text-blue-700 font-semibold">behance</strong>
+                    *Don't forget to like this project on <strong tw="text-blue-700 font-semibold">behance</strong>
                   </TextBody>
                 </LikeProject>
                 <WrapCase>
@@ -80,29 +79,26 @@ const CaseStudy = () => {
                     {listCases.name}
                   </Title>
                   <Link href={listCases.url} passHref>
-                    <ButtonOutline tw="text-black border-black">
-                      Read on behance
-                    </ButtonOutline>
+                    <ButtonOutline tw="text-black border-black">Read on behance</ButtonOutline>
                   </Link>
                 </WrapCase>
               </Caption>
               <HeroImg>
-                <BgColor bgColor={listCases.color} />
-                <ImgItem>
-                  <Img
-                    src={listCases.img}
-                    layout="fill"
-                    objectFit="fill"
-                    quality={100}
-                  />
-                </ImgItem>
-                <ButtonDown>
-                  <IconArrow tw="h-6 w-6 fill-current text-black z-10" />
+                {isMobile && (
+                  <>
+                    <BgColor bgColor={listCases.color} />
+                    <ImgItem>
+                      <Img src={listCases.img} layout="fill" objectFit="fill" quality={100} />
+                    </ImgItem>
+                    <ButtonDown>
+                      <IconArrow tw="h-6 w-6 fill-current text-black z-10" />
 
-                  <HeadingFive isRegular tw="z-10 text-black mt-2">
-                    Scroll Down
-                  </HeadingFive>
-                </ButtonDown>
+                      <HeadingFive isRegular tw="z-10 text-black mt-2">
+                        Scroll Down
+                      </HeadingFive>
+                    </ButtonDown>
+                  </>
+                )}
               </HeroImg>
             </Grid>
           </Container>

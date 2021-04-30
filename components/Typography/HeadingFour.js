@@ -2,7 +2,7 @@ import tw, { styled, css } from 'twin.macro';
 
 const HeadingFour = styled.h4(({ isCommon, isWoodland }) => [
   isCommon && [
-    tw`font-normal text-2xl font-common`,
+    tw`font-normal text-base sm:text-2xl font-common`,
     css`
       line-height: '26.4px';
     `,

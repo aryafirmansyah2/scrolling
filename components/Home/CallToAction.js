@@ -6,7 +6,7 @@ import Container from '../Common/Container';
 
 import Pattern from '@/assets/pattern/call-to-action/tablet/looper.svg';
 
-const Section = tw.section`w-full bg-black relative py-5`;
+const Section = tw.div`w-full bg-black relative py-5`;
 const WrapTitle = tw.div`w-full lg:w-8/12 mx-auto my-16 relative z-10`;
 const Title = tw.h2`text-white font-woodland text-6xl text-center font-bold`;
 const CallToAction = () => {
