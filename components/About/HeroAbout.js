@@ -34,22 +34,22 @@ const ImgContainer = styled.div`
 `;
 const Img = tw(Image)``;
 const HeroAbout = () => {
-  const { isOnlyMobile, isDesktop } = useResponsive();
+  const { isOnlyMobile, isDekstop, isMobile } = useResponsive();
   return (
     <Section id="about">
       <Container tw="h-full relative">
-        <img
-          src="/assets/pattern/about/eclipse.svg"
-          tw="absolute bottom-0 -right-36 top-0"
-          alt=""
-        />
-        <img
-          src="/assets/pattern/about/bg.svg"
-          tw="absolute left-48 -top-2 "
-          alt=""
-        />
+        {isMobile ? (
+          <>
+            {' '}
+            <img src="/assets/pattern/about/eclipse.svg" tw="absolute bottom-0 -right-36 top-0" alt="" />
+            <img src="/assets/pattern/about/bg.svg" tw="absolute left-48 -top-2 " alt="" />
+          </>
+        ) : (
+          <img src="/assets/pattern/about/eclipse-full.svg" tw="absolute -left-20 top-10 " alt="" />
+        )}
+
         <Grid tw="pt-44 pb-24 lg:py-24 h-full">
-          {isDesktop ? null : (
+          {isDekstop ? null : (
             <>
               <Service tw="col-span-6 row-start-1">
                 <Work>
@@ -76,18 +76,13 @@ const HeroAbout = () => {
               </Service>
               <WrapImg tw="col-span-6 row-start-1">
                 <ImgContainer>
-                  <Img
-                    src="/assets/content/hero-about-1.png"
-                    layout="fill"
-                    objectFit="contain"
-                    quality={100}
-                  />
+                  <Img src="/assets/content/hero-about-1.png" layout="fill" objectFit="contain" quality={100} />
                 </ImgContainer>
               </WrapImg>
             </>
           )}
           <WrapTitle>
-            {isDesktop && (
+            {isDekstop && (
               <Service>
                 <Work>
                   <svg
@@ -119,15 +114,10 @@ const HeroAbout = () => {
               Let’s collaborate with us
             </HeadingThree>
           </WrapTitle>
-          {isDesktop && (
+          {isDekstop && (
             <WrapImg>
               <ImgContainer>
-                <Img
-                  src="/assets/content/hero-about-1.png"
-                  layout="fill"
-                  objectFit="contain"
-                  quality={100}
-                />
+                <Img src="/assets/content/hero-about-1.png" layout="fill" objectFit="contain" quality={100} />
               </ImgContainer>
             </WrapImg>
           )}

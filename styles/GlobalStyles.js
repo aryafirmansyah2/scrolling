@@ -49,16 +49,20 @@ const customStyles = css`
     src: url(/fonts/woodland/PPWoodland-Bold.otf);
     src: url(/fonts/woodland/PPWoodland-Bold.woff);
   }
+  html,
+  body,
+  main {
+    ${tw`overflow-x-hidden`}
+  }
   body {
     font-family: 'TT Commons', 'sans-serif';
-    ${tw`overflow-x-hidden`}
+    ${tw`relative`}
   }
   main {
     scroll-snap-type: y mandatory;
     overflow: auto;
     flex: none;
     height: 100vh;
-    ${tw`overflow-x-hidden`}
   }
   section {
     scroll-snap-align: start;

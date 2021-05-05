@@ -8,7 +8,7 @@ const HeadingFour = styled.h4(({ isCommon, isWoodland }) => [
     `,
   ],
   isWoodland && [
-    tw`font-bold text-5xl font-woodland`,
+    tw`font-bold text-2xl sm:text-5xl font-woodland`,
     css`
       line-height: '43.2px';
     `,

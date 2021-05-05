@@ -21,12 +21,12 @@ const ImgHero = styled.div`
 const Img = tw(Image)`h-full w-full object-cover`;
 
 const HeroContact = () => {
-  const { isDesktop } = useResponsive();
-  console.log('Dekstop ', isDesktop);
+  const { isDekstop } = useResponsive();
+  console.log('Dekstop ', isDekstop);
   return (
     <Section id="hero-contact">
       <Container tw="relative flex">
-        {isDesktop ? (
+        {isDekstop ? (
           <img src="/assets/pattern/contact/eclipse.svg" tw="absolute top-0 left-0 " />
         ) : (
           <img src="/assets/pattern/contact/tablet/eclipse.svg" tw="absolute -top-10 left-0" />

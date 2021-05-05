@@ -15,7 +15,7 @@ function useResponsive() {
     minWidth: '768px',
   });
 
-  const isDesktop = useMediaQuery({
+  const isDekstop = useMediaQuery({
     minWidth: '1024px',
   });
 
@@ -24,7 +24,7 @@ function useResponsive() {
   }, []);
 
   return {
-    isDesktop: isClient ? isDesktop : false,
+    isDekstop: isClient ? isDekstop : false,
     isTablet: isClient ? isTablet : false,
     isMobile: isClient ? isMobile : true,
     isOnlyMobile: isClient ? isOnlyMobile : false,

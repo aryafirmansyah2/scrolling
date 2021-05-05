@@ -14,12 +14,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <Hero />
-        <CaseStudy />
-        <section tw="w-full h-screen flex flex-col">
-          <StimulusAds />
-          <CallToAction />
-        </section>
+        <main>
+          <Hero />
+          <CaseStudy />
+        </main>
+        <StimulusAds />
+        <CallToAction />
       </Layout>
     </>
   );
