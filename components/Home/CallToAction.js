@@ -24,13 +24,13 @@ const CallToAction = () => {
         />
       )} */}
       <Container tw="relative">
-        {isDekstop && (
+        {/* {isDekstop && (
           <img
             src="/assets/pattern/call-to-action/looper.svg"
             tw="absolute top-0 -bottom-32  lg:(-top-20 left-0) z-0"
             alt=""
           />
-        )}
+        )} */}
 
         <WrapTitle>
           {isDekstop ? (

@@ -8,26 +8,26 @@ import TextBody from '../Typography/TextBody';
 import listTeam from '@/data/listTeam';
 import Link from 'next/link';
 
-const Section = tw.section`min-h-screen w-full bg-white relative z-10 pt-36 pb-40`;
-const TextContent = tw.div`col-span-10 col-start-2 mb-12`;
+const Section = tw.section`min-h-screen w-full bg-white relative z-10 py-20 sm:(pt-36 pb-40)`;
+const TextContent = tw.div`col-span-full col-start-1 sm:(col-span-10 col-start-2) mb-12`;
 const ItemTeam = tw.div`col-span-full lg:col-span-4 flex flex-col`;
-const ImgBg = tw.div`w-full aspect-h-1 bg-gray-500 mb-12`;
+const ImgBg = tw.div`w-full aspect-h-1 bg-gray-500 mb-4 sm:mb-12`;
 const ImgTeam = tw.img`w-full h-full`;
 const ItemCaption = tw.div`flex flex-col`;
-const NameTeam = tw(HeadingTwo)`text-black mb-1`;
-const PositionTeam = tw(HeadingFour)`text-gray-200 mb-7 capitalize`;
-const QuoteTeam = tw(TextBody)`text-black mb-7 text-justify text-lg`;
+const NameTeam = tw(HeadingTwo)`text-black mb-1 font-semibold text-2.5xl sm:text-5xl `;
+const PositionTeam = tw(HeadingFour)`text-lg sm:text-2xl text-gray-200 mb-7 capitalize`;
+const QuoteTeam = tw(TextBody)`text-black mb-7 text-justify text-lg  md:text-2xl`;
 const SocialTeam = tw.div`flex w-full space-x-4`;
-const SocialLink = tw.a`font-semibold text-base uppercase`;
+const SocialLink = tw.a`font-semibold text-sm sm:text-base uppercase`;
 const ListTeam = () => {
   return (
-    <Section id="hero-team">
+    <Section id="list-team">
       <Container>
-        <Grid tw="gap-x-7 gap-y-24">
+        <Grid tw="gap-y-14 sm:(gap-x-10 gap-y-24)">
           <TextContent>
-            <TextBody isLgLight tw="text-center">
-              We're the child of the 90's, transformed into mutants and
-              interested in technological developments on earth.
+            <TextBody isLgLight tw="text-center ">
+              We're the child of the 90's, transformed into mutants and interested in technological developments on
+              earth.
             </TextBody>
           </TextContent>
           {listTeam.map((listTeams, index) => (

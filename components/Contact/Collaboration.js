@@ -10,7 +10,7 @@ const Section = tw.section`w-full bg-white pt-20 pb-24`;
 const ButtonCta = tw.button`col-span-full lg:col-span-6 px-3`;
 const Title = tw(HeadingOne)`text-black`;
 const Subtitle = tw(TextBody)`text-black mt-2`;
-const Maping = tw.div`col-span-full h-screen bg-gray-200 flex items-center justify-center mt-44`;
+const Maping = tw.div`col-span-full h-56 sm:h-screen bg-gray-200 flex items-center justify-center mt-20 sm:mt-44`;
 const WrapButton = tw.div`col-span-full flex items-center justify-center`;
 
 const Collaboration = () => {
@@ -34,7 +34,7 @@ const Collaboration = () => {
           </ButtonCta>
           <Maping>map here</Maping>
           <WrapButton>
-            <Button isSecondary tw="w-4/12">
+            <Button isSecondary tw="w-8/12 sm:w-4/12">
               Get Direction
             </Button>
           </WrapButton>
