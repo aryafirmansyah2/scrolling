@@ -20,8 +20,7 @@ const customStyles = css`
     font-family: 'TT Commons';
     font-style: normal;
     font-weight: 500;
-    src: local('TT Commons Regular'), url(/fonts/common/TTCommons-Regular.ttf),
-      url(/fonts/common/TTCommons-Regular.woff);
+    src: local('TT Commons Regular'), url(/fonts/common/TTCommons-Regular.ttf), url(/fonts/common/TTCommons-Regular.woff);
   }
   @font-face {
     font-family: 'TT Commons';
@@ -60,7 +59,7 @@ const customStyles = css`
   }
   main {
     scroll-snap-type: y mandatory;
-    overflow: auto;
+    ${tw`overflow-y-auto`}
     flex: none;
     height: 100vh;
   }

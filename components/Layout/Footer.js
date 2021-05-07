@@ -5,7 +5,7 @@ import Container from '../Common/Container';
 import Grid from '../Common/Grid';
 
 const Section = tw.footer`w-full bg-gray-100 flex flex-col pt-3`;
-const WidgetFooter = tw(Grid)` py-8 sm:py-14 text-gray-400 `;
+const WidgetFooter = tw(Grid)` py-8 sm:py-14 xl:py-8 text-gray-400 `;
 const Sitemap = tw.div`col-span-full sm:col-span-5 lg:col-span-2 flex flex-col`;
 const Title = tw.h5`text-sm mb-1 sm:(text-lg mb-3) text-white uppercase `;
 const Flex = tw.div`flex  justify-between`;
@@ -67,7 +67,7 @@ const Footer = () => {
         </WidgetFooter>
       </Container>
       <hr tw=" border-black w-full" />
-      <Container tw="py-4 sm:(pt-10 pb-8)">
+      <Container tw="py-4 sm:(pt-10 pb-8) ">
         <Flex tw="flex-col lg:flex-row">
           <p tw="text-sm sm:text-lg font-normal text-gray-400">2021 INAGATA TECHNOSMITH. All Rights Reserved.</p>
           <span tw="flex justify-between mt-4 lg:(justify-evenly mt-0) w-6/12">

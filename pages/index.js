@@ -5,6 +5,7 @@ import Hero from '@/components/Home/Hero';
 import CaseStudy from '@/components/Home/CaseStudy';
 import StimulusAds from '@/components/Home/StimulusAds';
 import CallToAction from '@/components/Home/CallToAction';
+import Footer from '@/components/Layout/Footer';
 
 export default function Home() {
   return (
@@ -17,9 +18,12 @@ export default function Home() {
         <main>
           <Hero />
           <CaseStudy />
+          <section tw="h-screen">
+            <StimulusAds />
+            <CallToAction />
+            <Footer />
+          </section>
         </main>
-        <StimulusAds />
-        <CallToAction />
       </Layout>
     </>
   );
