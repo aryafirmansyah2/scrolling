@@ -28,6 +28,7 @@ const Outline = styled.span`
     -webkit-text-stroke-color: black;
   `}
 `;
+
 const WrapService = tw.div`h-full lg:h-auto col-span-full flex flex-col items-start justify-start mt-auto`;
 const Service = tw.div`flex items-start justify-start`;
 const Work = tw.div`bg-black-200 rounded-2xl p-3 mr-4 sm:(p-4 mr-7)  `;
@@ -36,26 +37,24 @@ const WrapButton = tw.div`mt-auto lg:mt-0 w-full flex items-start justify-end`;
 const ButtonDown = tw.button`w-64 h-20 relative flex flex-col  items-center justify-end sm:justify-center`;
 const ImgButton = tw.img`absolute bottom-0 left-0 right-0 w-full`;
 
+const ImgCircleBg = styled.img`
+  ${tw`absolute h-auto`}
+  ${css`
+    top: -40%;
+    height: auto;
+    right: -30%;
+  `}
+`;
+
 const Hero = () => {
   const { isMobile, isOnlyMobile } = useResponsive();
   return (
-    <Section id="hero scroll">
+    <Section id="hero-scroll">
       <Container tw="flex h-full relative">
-        <img
-          src="/assets/pattern/home/bg-hero.svg"
-          tw="absolute bottom-0 -right-36  -top-40 h-full lg:(-top-14 h-auto -right-36)"
-          alt=""
-        />
-        <img
-          src="/assets/pattern/home/bg-hero-circle.svg"
-          tw="absolute top-36 bottom-0 -right-80 lg:(bottom-0 -right-36 top-6)"
-          alt=""
-        />
-        <img
-          src="/assets/pattern/home/eclipse-triple.svg"
-          tw="absolute h-20 right-32 sm:(h-auto right-28) bottom-40 lg:(bottom-1/3 right-24)"
-          alt=""
-        />
+        {/* <img src="/assets/pattern/home/bg-hero.png" tw="absolute bottom-0 -right-36  -top-40 h-full lg:(-top-14 h-auto -right-36)" alt="" /> */}
+        <ImgCircleBg src="/assets/pattern/home/bg-hero.png" />
+        <img src="/assets/pattern/home/bg-hero-circle.svg" tw="absolute top-36 bottom-0 -right-80 lg:(bottom-0 -right-36 top-6)" alt="" />
+        <img src="/assets/pattern/home/eclipse-triple.svg" tw="absolute h-20 right-32 sm:(h-auto right-28) bottom-40 lg:(bottom-1/3 right-24)" alt="" />
         <Grid>
           <Caption>
             <WrapTitle>
