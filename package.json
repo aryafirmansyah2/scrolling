@@ -13,9 +13,11 @@
     "@emotion/server": "^11.0.0",
     "@emotion/styled": "^11.1.5",
     "@tailwindcss/aspect-ratio": "^0.2.0",
+    "framer-motion": "^4.1.13",
     "next": "^10.0.3",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-intersection-observer": "^8.31.1",
     "react-responsive": "^8.2.0",
     "react-responsive-masonry": "^2.1.2"
   },

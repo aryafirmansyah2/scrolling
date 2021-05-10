@@ -13,19 +13,24 @@ import HeadingFive from '../Typography/HeadingFive';
 import listCase from '@/data/listCase';
 import Link from 'next/link';
 import useResponsive from '@/utils/useResponsive';
+import { motion } from 'framer-motion';
+import { InView } from 'react-intersection-observer';
+import StaggerChild from '../Animations/StaggerChild';
+import FadeInBottom from '../Animations/FadeInBottom';
+import FadeInLeft from '../Animations/FadeInLeft';
 
 const Section = styled.section(props => [tw`w-full relative h-screen bg-cover bg-no-repeat bg-white `]);
-const Caption = tw.div`col-span-full lg:col-span-7 flex flex-col my-auto row-start-1`;
+const Caption = tw(motion.div)`col-span-full lg:col-span-7 flex flex-col my-auto row-start-1`;
 const LikeProject = tw.div`flex items-center w-full mt-28 mb-12 lg:(mb-20)`;
-const Circle = tw.span`rounded-full bg-blue-700 mr-4 p-2 sm:p-3 lg:(p-4)`;
+const Circle = tw(motion.span)`rounded-full bg-blue-700 mr-4 p-2 sm:p-3 lg:(p-4)`;
 const WrapCase = tw.div`flex flex-col w-full items-start `;
-const Subtitle = tw.p`text-2xl sm:text-4xl leading-9  font-light mb-2 opacity-75`;
+const Subtitle = tw(motion.p)`text-2xl sm:text-4xl leading-9  font-light mb-2 opacity-75`;
 const Title = tw(HeadingOne)``;
 const ButtonOutline = tw.button`border text-2xl mb-6 sm:(text-xl mb-0 mt-6) lg:(text-2xl mt-12) rounded-2xl  py-3 px-11   font-normal`;
 
 const HeroImg = tw.div`col-span-full row-start-2 w-full  lg:(col-span-6 row-start-1 w-auto) flex flex-col h-auto  relative`;
-const ImgItem = styled.div`
-  ${tw`w-7/12 ml-auto mt-auto mb-16 lg:(w-full ml-0 my-auto) relative `}
+const ImgItem = styled(motion.div)`
+  ${tw`w-7/12 ml-auto mt-auto mb-16 lg:(w-full ml-0 my-auto) relative animate-bounce-fast`}
   ${css`
     height: 20rem;
     @media only screen and (min-width: 1024px) {
@@ -62,38 +67,36 @@ const CaseStudy = () => {
       {listCase.map((listCases, index) => (
         <Section color="hsla(29,35%,38%,1)" id={listCases.id + ' scroll'} key={index}>
           <Container tw="h-full relative">
-            <img
-              src="/assets/pattern/home/bg-hero-circle-black.svg"
-              tw="absolute top-20 -right-1/2 lg:(bottom-0 right-0 top-6)"
-              alt=""
-            />
-            <img
-              src="/assets/pattern/home/eclipse-triple.svg"
-              tw="hidden lg:block absolute right-44 top-3/4 z-10 h-20"
-              alt=""
-            />
+            <img src="/assets/pattern/home/bg-hero-circle-black.svg" tw="absolute top-20 -right-1/2 lg:(bottom-0 right-0 top-6)" alt="" />
+            <img src="/assets/pattern/home/eclipse-triple.svg" tw="hidden lg:block absolute right-44 top-3/4 animate-bounce-slow z-10 h-20" alt="" />
             <Grid tw="h-4/6 sm:h-full ">
-              <Caption>
-                <LikeProject>
-                  <Circle>
-                    <IconLike tw="h-3 w-3 sm:(h-4 w-4)" />
-                  </Circle>
-                  <TextBody isNormal>
-                    *Don't forget to like this project on <strong tw="text-blue-700 font-semibold">behance</strong>
-                  </TextBody>
-                </LikeProject>
-                <WrapCase>
-                  <Subtitle tw="text-black">{listCases.company}</Subtitle>
-                  <Title isCommon tw="text-black font-bold leading-tight">
-                    {listCases.name}
-                  </Title>
-                  {isMobile && (
-                    <Link href={listCases.url} passHref>
-                      <ButtonOutline tw="text-black border-black">Read on behance</ButtonOutline>
-                    </Link>
-                  )}
-                </WrapCase>
-              </Caption>
+              <InView>
+                {({ inView, ref }) => (
+                  <Caption ref={ref} variants={StaggerChild} animate={inView && 'show'} initial="hidden">
+                    <LikeProject>
+                      <Circle variants={FadeInBottom}>
+                        <IconLike tw="h-3 w-3 sm:(h-4 w-4)" />
+                      </Circle>
+                      <TextBody isNormal variants={FadeInBottom}>
+                        *Don't forget to like this project on <strong tw="text-blue-700 font-semibold">behance</strong>
+                      </TextBody>
+                    </LikeProject>
+                    <WrapCase>
+                      <Subtitle tw="text-black" variants={FadeInLeft}>
+                        {listCases.company}
+                      </Subtitle>
+                      <Title isCommon tw="text-black font-bold leading-tight" variants={FadeInLeft}>
+                        {listCases.name}
+                      </Title>
+                      {isMobile && (
+                        <ButtonOutline tw="text-black border-black" as={motion.button} variants={FadeInLeft}>
+                          Read on behance
+                        </ButtonOutline>
+                      )}
+                    </WrapCase>
+                  </Caption>
+                )}
+              </InView>
 
               {isMobile && (
                 <HeroImg>
@@ -102,8 +105,7 @@ const CaseStudy = () => {
                     <Img src={listCases.img} layout="fill" objectFit="fill" quality={100} />
                   </ImgItem>
                   <ButtonDown>
-                    <IconArrow tw="h-6 w-6 fill-current text-black z-10" />
-
+                    <IconArrow tw="h-6 w-6 fill-current text-black z-10 animate-bounce" />
                     <HeadingFive isRegular tw="z-10 text-black mt-2">
                       Scroll Down
                     </HeadingFive>

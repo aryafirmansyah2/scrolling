@@ -1,6 +1,7 @@
 import tw, { styled, css } from 'twin.macro';
+import { motion } from 'framer-motion';
 
-const TextBody = styled.p(({ isLgDemiBold, isLgRegular, isLgLight, isNormalLight, isNormal }) => [
+const TextBody = styled(motion.p)(({ isLgDemiBold, isLgRegular, isLgLight, isNormalLight, isNormal }) => [
   tw`font-common `,
   isLgDemiBold && tw`font-semibold text-8xl `,
   isLgRegular && tw`text-8xl `,

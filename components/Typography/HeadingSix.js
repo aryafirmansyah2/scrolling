@@ -1,6 +1,7 @@
 import tw, { styled, css } from 'twin.macro';
+import { motion } from 'framer-motion';
 
-const HeadingSix = styled.h6(({ isDemiBold, isMedium, isRegular }) => [
+const HeadingSix = styled(motion.h6)(({ isDemiBold, isMedium, isRegular }) => [
   tw`font-common  text-lg`,
   css`
     font-size: '0.938rem';

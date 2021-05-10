@@ -1,10 +1,17 @@
 import React from 'react';
 import Link from 'next/link';
-import tw from 'twin.macro';
+import tw, { styled, css } from 'twin.macro';
 import Container from '../Common/Container';
 import Grid from '../Common/Grid';
 
-const Section = tw.footer`w-full bg-gray-100 flex flex-col pt-3`;
+const Section = styled.footer`
+  ${tw`w-full bg-gray-100 flex flex-col pt-3`}
+  ${css`
+    @media screen and (min-width: 1500px) {
+      ${tw`flex-1`}
+    }
+  `}
+`;
 const WidgetFooter = tw(Grid)` py-8 sm:py-14 xl:py-8 text-gray-400 `;
 const Sitemap = tw.div`col-span-full sm:col-span-5 lg:col-span-2 flex flex-col`;
 const Title = tw.h5`text-sm mb-1 sm:(text-lg mb-3) text-white uppercase `;
@@ -15,7 +22,7 @@ const Contact = tw.div`col-span-full text-lg sm:pt-2 lg:(col-span-4 col-end-13 t
 const Footer = () => {
   return (
     <Section>
-      <Container tw="flex flex-col">
+      <Container tw="flex flex-col 2xl:(mt-auto)">
         <WidgetFooter>
           <Sitemap>
             <Title>SITE MAP</Title>

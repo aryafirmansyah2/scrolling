@@ -1,12 +1,7 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
-  purge: [
-    './pages/*.js',
-    './pages/**/*.js',
-    './components/*.js',
-    './components/**/*.js',
-  ],
+  purge: ['./pages/*.js', './pages/**/*.js', './components/*.js', './components/**/*.js'],
   theme: {
     fontSize: {
       xs: '.75rem',
@@ -66,6 +61,10 @@ module.exports = {
           100: 'hsla(26, 95%, 85%, 1)',
           500: 'hsla(29,49%,87%,1)',
         },
+      },
+      animation: {
+        'bounce-slow': 'bouncing 4s infinite ',
+        'bounce-fast': 'bouncing 3s infinite ',
       },
     },
   },

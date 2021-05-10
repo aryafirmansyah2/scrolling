@@ -1,6 +1,6 @@
 import tw, { styled, css } from 'twin.macro';
-
-const HeadingOne = styled.h1(({ isCommon, isWoodland }) => [
+import { motion } from 'framer-motion';
+const HeadingOne = styled(motion.h1)(({ isCommon, isWoodland }) => [
   isWoodland && [
     tw`font-bold text-5xl sm:text-8xl font-woodland`,
     css`

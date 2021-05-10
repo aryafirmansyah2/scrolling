@@ -1,6 +1,7 @@
 import tw, { styled, css } from 'twin.macro';
+import { motion } from 'framer-motion';
 
-const HeadingFour = styled.h4(({ isCommon, isWoodland }) => [
+const HeadingFour = styled(motion.h4)(({ isCommon, isWoodland }) => [
   isCommon && [
     tw`font-normal text-base sm:text-2xl font-common`,
     css`

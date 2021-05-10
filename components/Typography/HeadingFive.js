@@ -1,6 +1,7 @@
+import { motion } from 'framer-motion';
 import tw, { styled, css } from 'twin.macro';
 
-const HeadingFive = styled.h5(({ isDemiBold, isMedium, isRegular }) => [
+const HeadingFive = styled(motion.h5)(({ isDemiBold, isMedium, isRegular }) => [
   tw`font-common  text-lg`,
   css`
     line-height: '19.8px';
