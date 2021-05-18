@@ -68,7 +68,11 @@ const Header = () => {
       <Nav>
         <Container>
           <Flex>
-            <LogoInagata tw="h-9 w-9" />
+            <Link href="/">
+              <a>
+                <LogoInagata tw="h-9 w-9" />
+              </a>
+            </Link>
             {showNavbar ? <IconClosse tw="h-9 w-9 cursor-pointer" onClick={() => setShowNavbar(!showNavbar)} /> : <IconHamburger tw="h-9 w-9 cursor-pointer" onClick={() => setShowNavbar(!showNavbar)} />}
           </Flex>
         </Container>
@@ -77,23 +81,23 @@ const Header = () => {
         {showNavbar && (
           <BgNavbar variants={SidebarAnime} initial="hidden" animate="show" exit="exit">
             <ListItem>
-              <MenuItem as={motion.a} onClick={() => router.push('/')} variants={FadeIn}>
+              <MenuItem as={motion.a} onClick={() => router.push('/').then(() => window.scrollTo(0, 0))}>
                 Home
               </MenuItem>
 
-              <MenuItem as={motion.a} onClick={() => router.push('/work')} variants={FadeIn}>
+              <MenuItem as={motion.a} onClick={() => router.push('/work').then(() => window.scrollTo(0, 0))}>
                 Works
               </MenuItem>
 
-              <MenuItem as={motion.a} onClick={() => router.push('/about')} variants={FadeIn}>
+              <MenuItem as={motion.a} onClick={() => router.push('/about').then(() => window.scrollTo(0, 0))}>
                 About
               </MenuItem>
 
-              <MenuItem as={motion.a} onClick={() => router.push('/team')} variants={FadeIn}>
+              <MenuItem as={motion.a} onClick={() => router.push('/team').then(() => window.scrollTo(0, 0))}>
                 Team
               </MenuItem>
 
-              <MenuItem as={motion.a} onClick={() => router.push('/contact')} variants={FadeIn}>
+              <MenuItem as={motion.a} onClick={() => router.push('/contact').then(() => window.scrollTo(0, 0))}>
                 Contact
               </MenuItem>
 

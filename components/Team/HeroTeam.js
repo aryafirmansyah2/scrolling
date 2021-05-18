@@ -1,5 +1,6 @@
 import React from 'react';
 import tw, { styled, css } from 'twin.macro';
+import FadeInBottom from '../Animations/FadeInBottom';
 import Container from '../Common/Container';
 import Grid from '../Common/Grid';
 import HeadingOne from '../Typography/HeadingOne';
@@ -19,7 +20,9 @@ const HeroTeam = () => {
       <Container>
         <Grid tw="h-full">
           <MainContent>
-            <Title isWoodland>Our Team</Title>
+            <Title isWoodland variants={FadeInBottom} initial="hidden" animate="show">
+              Our Team
+            </Title>
           </MainContent>
         </Grid>
       </Container>

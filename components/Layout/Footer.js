@@ -7,7 +7,12 @@ import Grid from '../Common/Grid';
 const Section = styled.footer`
   ${tw`w-full bg-gray-100 flex flex-col pt-3`}
   ${css`
+    @media screen and (min-width: 1280px) {
+      min-width: 420px;
+      ${tw`flex-1`}
+    }
     @media screen and (min-width: 1500px) {
+      min-width: 420px;
       ${tw`flex-1`}
     }
   `}
@@ -73,7 +78,7 @@ const Footer = () => {
           </Contact>
         </WidgetFooter>
       </Container>
-      <hr tw=" border-black w-full" />
+      <hr tw=" border-black w-full mt-8" />
       <Container tw="py-4 sm:(pt-10 pb-8) ">
         <Flex tw="flex-col lg:flex-row">
           <p tw="text-sm sm:text-lg font-normal text-gray-400">2021 INAGATA TECHNOSMITH. All Rights Reserved.</p>

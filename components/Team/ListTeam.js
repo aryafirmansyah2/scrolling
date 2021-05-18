@@ -8,11 +8,15 @@ import TextBody from '../Typography/TextBody';
 import listTeam from '@/data/listTeam';
 import Link from 'next/link';
 import HeadingOne from '../Typography/HeadingOne';
+import { InView } from 'react-intersection-observer';
+import { motion } from 'framer-motion';
+import StaggerChild from '../Animations/StaggerChild';
+import FadeInBottom from '../Animations/FadeInBottom';
 
 const Section = tw.section`min-h-screen w-full bg-white relative z-10 pt-6 pb-20 sm:(pt-36 pb-40)`;
-const TextContent = tw.div`col-span-full col-start-1 flex flex-col sm:(col-span-10 col-start-2) mb-12`;
+const TextContent = tw(motion.div)`col-span-full col-start-1 flex flex-col sm:(col-span-10 col-start-2) mb-12`;
 const ItemTeam = tw.div`col-span-full lg:col-span-4 flex flex-col`;
-const ImgBg = tw.div`w-full aspect-h-1 bg-gray-500 mb-4 sm:mb-12`;
+const ImgBg = tw.div`w-full aspect-h-1 bg-gray-500 transition-all hover:(bg-red-team) mb-4 sm:mb-12`;
 const ImgTeam = tw.img`w-full h-full`;
 const ItemCaption = tw.div`flex flex-col`;
 const NameTeam = tw(HeadingTwo)`text-black mb-1 font-semibold text-2.5xl sm:text-5xl `;
@@ -26,12 +30,19 @@ const ListTeam = () => {
     <Section id="list-team">
       <Container>
         <Grid tw="gap-y-14 sm:(gap-x-10 gap-y-24)">
-          <TextContent>
-            <Title isWoodland>Our Team</Title>
-            <TextBody isLgLight tw="text-center ">
-              We're the child of the 90's, transformed into mutants and interested in technological developments on earth.
-            </TextBody>
-          </TextContent>
+          <InView>
+            {({ inView, ref }) => (
+              <TextContent ref={ref} variants={StaggerChild} animate={inView && 'show'} initial="hidden">
+                <Title isWoodland variants={FadeInBottom}>
+                  Our Team
+                </Title>
+                <TextBody isLgLight tw="text-center " variants={FadeInBottom}>
+                  We're the child of the 90's, transformed into mutants and interested in technological developments on earth.
+                </TextBody>
+              </TextContent>
+            )}
+          </InView>
+
           {listTeam.map((listTeams, index) => (
             <ItemTeam key={index}>
               <ImgBg>

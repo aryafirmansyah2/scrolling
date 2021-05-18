@@ -19,7 +19,7 @@ const Section = styled.div`
 const WrapTitle = tw.div`w-full lg:w-8/12 mx-auto py-8 sm:py-16 relative z-10 flex items-center justify-center  lg:h-40 2xl:h-52`;
 const Title = tw(motion.h2)`text-white font-woodland text-6xl text-center font-bold cursor-pointer`;
 const Flex = tw(motion.div)`flex items-center mx-auto  w-full gap-4 sm:(w-10/12 gap-8 mx-auto) md:(w-full justify-between)`;
-const LinkCta = tw(motion.a)`font-woodland text-base lg:text-5xl sm:text-2xl text-white px-4 sm:px-12 md:px-6 font-bold cursor-pointer`;
+const LinkCta = tw(motion.a)`font-woodland text-base lg:text-5xl sm:text-2xl text-white px-4 sm:px-12 md:px-6 font-bold cursor-pointer pb-1 border-b-2 border-transparent hover:(border-white)`;
 
 const FadeInBottomHover = {
   hidden: {
@@ -41,17 +41,25 @@ const FadeInBottomHover = {
   },
 };
 const CallToAction = () => {
-  const [showHover, setShowHover] = useState(true);
+  const [showHover, setShowHover] = useState(false);
   const { isDekstop, isMobile } = useResponsive();
 
+  const handleEnter = () => {
+    if (showHover === false) {
+      setShowHover(true);
+    }
+  };
+  const handleLeave = () => {
+    setShowHover(false);
+  };
   return (
     <Section id="cta">
-      <Container tw="relative">
+      <Container tw="relative" onMouseEnter={handleEnter} onMouseDown={handleLeave} onMouseLeave={handleLeave}>
         <InView>
           {({ inView, ref }) => (
-            <WrapTitle ref={ref} onMouseEnter={() => setShowHover(true)} onMouseLeave={() => setShowHover(false)}>
+            <WrapTitle ref={ref}>
               {isDekstop ? (
-                <AnimatePresence>
+                <AnimatePresence onExitComplete>
                   {showHover ? (
                     <Flex>
                       <LinkCta variants={FadeInBottomHover} animate={inView && 'show'} initial="hidden" exit="exit">

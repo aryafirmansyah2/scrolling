@@ -15,7 +15,7 @@ const StaggerChild = {
 
       // The next sibling will appear 0.5s after the previous one
 
-      staggerChildren: 0.3,
+      staggerChildren: 0.4,
     },
   },
 };

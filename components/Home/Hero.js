@@ -53,6 +53,7 @@ const ImgCircleBg = styled.img`
 
 const Hero = () => {
   const { isMobile, isOnlyMobile } = useResponsive();
+
   return (
     <Section id="hero-scroll">
       <Container tw="flex h-full relative">
@@ -71,11 +72,11 @@ const Hero = () => {
               </Title>
             </WrapTitle>
             {isOnlyMobile && (
-              <Service tw=" mt-9" variants={StaggerChild} animate="show" initial="hidden">
-                <Work variants={FadeInBottom}>
+              <Service tw=" mt-9" variants={FadeInBottom} animate="show" initial="hidden">
+                <Work>
                   <IconCombinedShape tw="h-5 w-5 sm:(h-9 w-9)" />
                 </Work>
-                <ServiceCaption isCommon variants={FadeInBottom}>
+                <ServiceCaption isCommon>
                   Website Development / Mobile Development / <br /> Visual Design
                 </ServiceCaption>
               </Service>
@@ -83,11 +84,11 @@ const Hero = () => {
           </Caption>
           <WrapService>
             {isMobile && (
-              <Service variants={StaggerChild} animate="show" initial="hidden">
-                <Work variants={FadeInBottom}>
+              <Service variants={FadeInBottom} animate="show" initial="hidden">
+                <Work>
                   <IconCombinedShape tw="h-5 w-5 sm:(h-9 w-9)" />
                 </Work>
-                <ServiceCaption isCommon variants={FadeInBottom}>
+                <ServiceCaption isCommon>
                   Website Development / Mobile Development / <br /> Visual Design
                 </ServiceCaption>
               </Service>

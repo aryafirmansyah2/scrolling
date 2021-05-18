@@ -7,12 +7,15 @@ import useResponsive from '@/utils/useResponsive';
 import HeadingFour from '../Typography/HeadingFour';
 import HeadingThree from '../Typography/HeadingThree';
 import Image from 'next/image';
+import StaggerChild from '../Animations/StaggerChild';
+import { motion } from 'framer-motion';
+import FadeInBottom from '../Animations/FadeInBottom';
 
 const Section = tw.section`h-screen w-full relative bg-white`;
 const WrapExperience = tw.div`col-span-full row-start-1`;
 const WrapTitle = tw.div`col-span-full mt-4 sm:mt-0 lg:col-span-7 flex flex-col h-full justify-end`;
-const Title = tw.h1`font-bold font-common text-5.5xl sm:text-10xl leading-none lg:mt-28 text-black`;
-const Service = tw.div`flex items-end mt-auto sm:mb-12 lg:(items-center mb-0)`;
+const Title = tw(motion.h1)`font-bold font-common text-5.5xl sm:text-10xl leading-none lg:mt-28 text-black`;
+const Service = tw(motion.div)`flex items-end mt-auto sm:mb-12 lg:(items-center mb-0)`;
 const Work = tw.div`bg-black-200 rounded-2xl p-3 mr-4 sm:(p-4 mr-7)`;
 const ServiceCaption = tw(HeadingFour)`text-black`;
 const Outline = styled.strong`
@@ -53,10 +56,10 @@ const HeroAbout = () => {
           <img src="/assets/pattern/about/eclipse-full.svg" tw="absolute -left-28 top-10 " alt="" />
         )}
 
-        <Grid tw="pt-20 sm:pt-44 pb-24 lg:py-24 h-full">
+        <Grid tw="pt-20 sm:pt-44 pb-24 lg:py-24 h-full" variants={StaggerChild} animate="show" initial="hidden">
           {isDekstop ? null : (
             <>
-              <Service tw="col-span-full row-start-2 sm:(col-span-6 row-start-1)">
+              <Service variants={FadeInBottom} tw="col-span-full row-start-2 sm:(col-span-6 row-start-1)">
                 <Work>
                   <svg tw="h-6 w-6 fill-current text-white" viewBox="0 0 35 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -80,7 +83,7 @@ const HeroAbout = () => {
           )}
           <WrapTitle>
             {isDekstop && (
-              <Service>
+              <Service variants={FadeInBottom}>
                 <Work>
                   <svg tw="h-6 w-6 fill-current text-white" viewBox="0 0 35 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -96,10 +99,10 @@ const HeroAbout = () => {
                 </ServiceCaption>
               </Service>
             )}
-            <Title>
+            <Title variants={FadeInBottom}>
               We are a digital product design <br /> <Outline>agency.</Outline>
             </Title>
-            <HeadingThree isCommonMedium tw="opacity-75">
+            <HeadingThree isCommonMedium tw="opacity-75" variants={FadeInBottom}>
               Let’s collaborate with us
             </HeadingThree>
           </WrapTitle>
