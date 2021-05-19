@@ -9,13 +9,17 @@ import HeadingTwo from '../Typography/HeadingTwo';
 
 import listProject from '@/data/listProject';
 import useResponsive from '@/utils/useResponsive';
+import FadeInBottom from '../Animations/FadeInBottom';
+import { motion } from 'framer-motion';
+import StaggerChild from '../Animations/StaggerChild';
+import FadeInLeft from '../Animations/FadeInLeft';
 
 const Section = tw.section`w-full bg-white pt-20 pb-10 sm:py-32`;
 const Title = tw(HeadingOne)`text-brown-gold col-span-full text-center mt-12 mb-10 sm:(mt-28 mb-20)`;
-const Filter = tw.div`col-span-full flex gap-3 sm:gap-0 flex-wrap sm:flex-nowrap mb-4`;
+const Filter = tw(motion.div)`col-span-full flex gap-3 sm:gap-0 flex-wrap sm:flex-nowrap mb-4`;
 const FilterItem = HeadingTwo.withComponent('button');
 const WrapGallery = tw.div`col-span-full `;
-const Gallery = styled.div`
+const Gallery = styled(motion.div)`
   ${tw`flex flex-wrap flex-col -mx-4 `}
   ${css`
     height: 2800px;
@@ -33,7 +37,7 @@ const Gallery = styled.div`
     `}
   }
 `;
-const Item = styled.div`
+const Item = styled(motion.div)`
   ${tw`flex flex-col px-8 w-6/12 relative mb-16`}
   &:nth-child(2n+1) {
     ${css`
@@ -75,26 +79,28 @@ const ListWork = () => {
     <Section>
       <Container>
         <Grid>
-          <Title isWoodland>Our Works</Title>
-          <Filter>
-            <FilterItem isCommon tw="text-black px-2 mx-2 text-2xl sm:(px-0 text-5xl)">
+          <Title isWoodland variants={FadeInBottom} animate="show" initial="hidden">
+            Our Works
+          </Title>
+          <Filter variants={StaggerChild} initial="hidden" animate="show">
+            <FilterItem as={motion.button} variants={FadeInLeft} isCommon tw="text-black px-2 mx-2 text-2xl sm:(px-0 text-5xl)">
               Show All
             </FilterItem>
-            <FilterItem isCommon tw="text-gray-300 px-2 mx-2 text-2xl sm:(px-0 text-5xl)">
+            <FilterItem as={motion.button} variants={FadeInLeft} isCommon tw="text-gray-300 px-2 mx-2 text-2xl sm:(px-0 text-5xl)">
               Website
             </FilterItem>
-            <FilterItem isCommon tw="text-gray-300 px-2 mx-2 text-2xl sm:(px-0 text-5xl)">
+            <FilterItem as={motion.button} variants={FadeInLeft} isCommon tw="text-gray-300 px-2 mx-2 text-2xl sm:(px-0 text-5xl)">
               Mobile Apps
             </FilterItem>
-            <FilterItem isCommon tw="text-gray-300 px-2 mx-2 text-2xl sm:(px-0 text-5xl)">
+            <FilterItem as={motion.button} variants={FadeInLeft} isCommon tw="text-gray-300 px-2 mx-2 text-2xl sm:(px-0 text-5xl)">
               UI/UX Design
             </FilterItem>
           </Filter>
           <WrapGallery>
             {isDekstop ? (
-              <Gallery>
+              <Gallery variants={StaggerChild} initial="hidden" animate="show">
                 {listProject.map((listProjects, index) => (
-                  <Item key={index}>
+                  <Item variants={FadeInBottom} key={index}>
                     <WrapImg isLong={listProjects.scale === 'long'} isShort={listProjects.scale === 'short'}>
                       <Img src={listProjects.img} layout="fill" objectFit="cover" />
                     </WrapImg>
