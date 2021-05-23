@@ -19,7 +19,7 @@ import FadeIn from '../Animations/FadeIn';
 
 const Section = tw.section`h-screen w-full bg-white relative z-10`;
 const Caption = tw.div`col-span-full lg:col-span-9 col-start-1 row-start-1 flex flex-col `;
-const WrapTitle = tw(motion.div)`flex flex-col w-full mt-52 sm:mt-64`;
+const WrapTitle = tw(motion.div)`flex flex-col w-full  sm:mt-64 lg:mt-40 xl:mt-52`;
 
 const Subtitle = tw(HeadingThree)`text-2xl sm:text-4xl text-black opacity-75 leading-6 font-common font-light`;
 const Title = styled(motion.h1)`
