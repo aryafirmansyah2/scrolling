@@ -11,11 +11,12 @@ import { InView } from 'react-intersection-observer';
 import { motion } from 'framer-motion';
 import StaggerChild from '../Animations/StaggerChild';
 import FadeInBottom from '../Animations/FadeInBottom';
+import Link from 'next/link';
 
 const Section = tw.section`w-full bg-white pt-20 pb-24`;
-const ButtonCta = tw(motion.button)`col-span-full lg:col-span-6 px-3`;
-const Title = tw(HeadingOne)`text-black`;
-const Subtitle = tw(TextBody)`text-black mt-2`;
+const ButtonCta = tw(motion.a)`col-span-full lg:col-span-6 px-3 text-center text-black hover:(text-red-500)`;
+const Title = tw(HeadingOne)``;
+const Subtitle = tw(TextBody)` mt-2`;
 const Maping = tw.div`col-span-full h-56 sm:h-screen  flex items-center justify-center mt-20 sm:mt-44`;
 const WrapButton = tw.div`col-span-full flex items-center justify-center`;
 
@@ -35,26 +36,38 @@ const Collaboration = () => {
     e.preventDefault();
     router.push(href);
   };
+  const urlIntership = 'https://form.typeform.com/to/aPFn81jt';
+  const urlPartner = 'https://form.typeform.com/to/V74ualj4';
+  const urlCarrier = 'mailto:contact@inagata.com';
+
   return (
     <Section>
       <Container>
         <InView>
           {({ inView, ref }) => (
             <Grid tw="gap-y-16" ref={ref} variants={StaggerChild} animate={inView && 'show'} initial="hidden">
-              <ButtonCta tw="col-start-1" variants={FadeInBottom}>
-                <Title isWoodland>I’m a partner</Title>
-                <Subtitle isNormal>fill out a simple form</Subtitle>
-              </ButtonCta>
-              <ButtonCta tw="col-end-13" variants={FadeInBottom}>
-                <Title isWoodland>Intership Program</Title>
-                <Subtitle isNormal>Requirement & Downloadebles</Subtitle>
-              </ButtonCta>
-              <ButtonCta tw="col-start-1 lg:row-start-2" variants={FadeInBottom}>
-                <Title isWoodland>Carier</Title>
-              </ButtonCta>
-              <ButtonCta tw="col-end-13 lg:row-start-2" variants={FadeInBottom}>
-                <Title isWoodland>Talks & Workshop</Title>
-              </ButtonCta>
+              <Link href={urlPartner} passHref>
+                <ButtonCta tw="col-start-1" variants={FadeInBottom}>
+                  <Title isWoodland>I’m a partner</Title>
+                  <Subtitle isNormal>fill out a simple form</Subtitle>
+                </ButtonCta>
+              </Link>
+              <Link href={urlIntership} passHref>
+                <ButtonCta tw="col-end-13" variants={FadeInBottom}>
+                  <Title isWoodland>Intership Program</Title>
+                  <Subtitle isNormal>Requirement & Downloadebles</Subtitle>
+                </ButtonCta>
+              </Link>
+              <Link href={urlCarrier} passHref>
+                <ButtonCta tw="col-start-1 lg:row-start-2" variants={FadeInBottom}>
+                  <Title isWoodland>Carier</Title>
+                </ButtonCta>
+              </Link>
+              <Link href={urlCarrier} passHref>
+                <ButtonCta tw="col-end-13 lg:row-start-2" variants={FadeInBottom}>
+                  <Title isWoodland>Talks & Workshop</Title>
+                </ButtonCta>
+              </Link>
               <Maping>
                 <LoadScript googleMapsApiKey="AIzaSyBMLfSV2-Zypo78G2yuPP94tPfy9PPZYAA">
                   <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={15}>

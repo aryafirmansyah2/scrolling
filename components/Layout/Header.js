@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import tw from 'twin.macro';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -9,28 +9,26 @@ import LogoInagata from '@/assets/logo/inagata.svg';
 import IconHamburger from '@/assets/icon/hamburger.svg';
 import IconClosse from '@/assets/icon/close-hamburger.svg';
 import { AnimatePresence, motion } from 'framer-motion';
-import StaggerChild from '../Animations/StaggerChild';
-import FadeInBottom from '../Animations/FadeInBottom';
-import FadeInTop from '../Animations/FadeInTop';
-import FadeIn from '../Animations/FadeIn';
 
 const Nav = tw.nav`w-full bg-transparent fixed top-0 right-0 left-0 z-30`;
-const Flex = tw.div`flex justify-between w-full pt-14`;
-const BgNavbar = tw(motion.div)`bg-black h-screen w-screen fixed z-20 flex items-center justify-center`;
+const Flex = tw.div`flex justify-between w-full pt-8 sm:py-7`;
+const BgNavbar = tw(motion.div)`bg-black bg-opacity-95 h-screen w-screen fixed z-20 flex items-center justify-center`;
 const ListItem = tw(motion.div)`flex flex-col justify-center items-center`;
-const MenuItem = tw.a`w-auto cursor-pointer my-2 text-center leading-tight transition-all font-woodland text-5.5xl font-bold text-white  border-b-2 border-transparent hover:(border-white) relative`;
+const MenuItem = tw.a`w-auto cursor-pointer my-2 text-center leading-tight transition-all font-woodland text-5.5xl font-bold text-white   hover:(text-brown-gold) relative`;
 
 const SidebarAnime = {
   hidden: {
     opacity: 0,
-    width: '0px',
-    marginRight: '0px',
+
+    marginBottom: '0px',
+    y: 300,
   },
 
   show: {
     opacity: 1,
-    width: '100vw',
-    marginRight: '1px',
+
+    marginBottom: '1px',
+    y: 0,
     transition: {
       duration: 1,
       type: 'spring',
@@ -45,15 +43,15 @@ const SidebarAnime = {
   },
   exit: {
     opacity: 0,
-    width: '0px',
-    marginRight: '0px',
+
+    marginBottom: '0px',
+    y: -300,
     transition: {
       duration: 1,
       type: 'spring',
       // stiffness: 20,
       // restDelta: 2,
-      // // The first child will appear AFTER the parrent has appeared on the screen
-      // // The next sibling will appear 0.5s after the previous one
+
       staggerChildren: 0.2,
       staggerDirection: -1,
     },
@@ -63,9 +61,29 @@ const SidebarAnime = {
 const Header = () => {
   const router = useRouter();
   const [showNavbar, setShowNavbar] = useState(false);
+  const [scrollActive, setScrollActive] = useState(false);
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 40) {
+        document.getElementById('navbar').style.display = 'invisible';
+      } else {
+        document.getElementById('navbar').style.display = 'visible';
+      }
+      // setScrollActive(window.scrollY > 40);
+    });
+    // 20 is an arbitrary number here, just to make you think if you need the prevScrollpos variable:
+    // if (currentScrollPos > 20) {
+    //   // I am using 'display' instead of 'top':
+    //   document.getElementById('navbar').style.display = 'invisible';
+    // } else {
+    //   document.getElementById('navbar').style.display = 'visible';
+    // }
+    console.log('offset ', window.pageYOffset);
+  }, [pageYOffset]);
+
   return (
     <>
-      <Nav>
+      <Nav id="navbar">
         <Container>
           <Flex>
             <Link href="/">
@@ -100,33 +118,6 @@ const Header = () => {
               <MenuItem as={motion.a} onClick={() => router.push('/contact').then(() => window.scrollTo(0, 0))}>
                 Contact
               </MenuItem>
-
-              {/* <Link href="/">
-                <MenuItem as={motion.a} variants={FadeInBottom}>
-                  Home
-                </MenuItem>
-              </Link>
-              <Link href="/work">
-                <MenuItem as={motion.a} variants={FadeInBottom}>
-                  Works
-                </MenuItem>
-              </Link>
-              <Link href="/about">
-                <MenuItem as={motion.a} variants={FadeInBottom}>
-                  About
-                </MenuItem>
-              </Link>
-              <Link href="/team">
-                <MenuItem as={motion.a} variants={FadeInBottom}>
-                  Team
-                </MenuItem>
-              </Link>
-              <Link href="/contact">
-                <MenuItem as={motion.a} variants={FadeInBottom}>
-                  Contact
-                </MenuItem>
-              </Link> */}
-              {/* <MenuItem>Journal</MenuItem> */}
             </ListItem>
           </BgNavbar>
         )}

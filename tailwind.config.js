@@ -10,6 +10,7 @@ module.exports = {
       base: '1rem',
       lg: '1.125rem',
       xl: '1.25rem',
+      '1xl': '1.375rem',
       '2xl': ['1.5rem', '36px'],
       '2.5xl': '1.75rem',
       '3xl': '1.875rem',
@@ -43,7 +44,7 @@ module.exports = {
         },
 
         black: {
-          DEFAULT: 'hsla(0,0%,7%,1)',
+          DEFAULT: '#121212',
           200: 'hsla(187, 7%, 21%, 1)',
         },
         red: {

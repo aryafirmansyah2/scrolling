@@ -19,7 +19,7 @@ import FadeIn from '../Animations/FadeIn';
 
 const Section = tw.section`h-screen w-full bg-white relative z-10`;
 const Caption = tw.div`col-span-full lg:col-span-9 col-start-1 row-start-1 flex flex-col `;
-const WrapTitle = tw(motion.div)`flex flex-col w-full  sm:mt-64 lg:mt-40 xl:mt-52`;
+const WrapTitle = tw(motion.div)`flex flex-col w-full mt-40  sm:mt-64 lg:mt-40 xl:mt-52`;
 
 const Subtitle = tw(HeadingThree)`text-2xl sm:text-4xl text-black opacity-75 leading-6 font-common font-light`;
 const Title = styled(motion.h1)`
@@ -43,11 +43,13 @@ const ButtonDown = tw.div`w-64 h-20 relative flex flex-col  items-center justify
 const ImgButton = tw(motion.img)`absolute bottom-0 left-0 right-0 w-full`;
 
 const ImgCircleBg = styled.img`
-  ${tw`absolute h-auto`}
+  ${tw`absolute h-auto top-0`}
   ${css`
-    top: -40%;
     height: auto;
     right: -30%;
+    @media screen and (min-width: 480px) {
+      top: -40%;
+    }
   `}
 `;
 

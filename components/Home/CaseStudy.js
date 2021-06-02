@@ -21,14 +21,14 @@ import FadeInLeft from '../Animations/FadeInLeft';
 
 const Section = styled.section(props => [tw`w-full relative h-screen bg-cover bg-no-repeat bg-white `]);
 const Caption = tw(motion.div)`col-span-full lg:col-span-7 flex flex-col my-auto row-start-1`;
-const LikeProject = tw.div`flex items-center w-full mt-28 mb-12 lg:(mb-20)`;
+const LikeProject = tw.div`flex items-center w-full mt-0 mb-12 lg:(mb-20)`;
 const Circle = tw(motion.span)`rounded-full bg-blue-700 mr-4 p-2 sm:p-3 lg:(p-4)`;
 const WrapCase = tw.div`flex flex-col w-full items-start `;
 const Subtitle = tw(motion.p)`text-2xl sm:text-4xl leading-9  font-light mb-2 opacity-75`;
-const Title = tw(HeadingOne)``;
-const ButtonOutline = tw.button`border text-2xl mb-6 sm:(text-xl mb-0 mt-6) lg:(text-2xl mt-12) rounded-2xl  py-3 px-11   font-normal`;
+const Title = tw(motion.h1)`font-normal text-2xl sm:text-8.5xl font-common leading-relaxed`;
+const ButtonOutline = tw.button`w-72 h-14 border text-2xl mb-6 sm:(text-xl mb-0 mt-6) lg:(text-2xl mt-12) rounded-2xl  py-3 px-11   font-normal`;
 
-const HeroImg = tw.div`col-span-full row-start-2 w-full  lg:(col-span-6 row-start-1 w-auto) flex flex-col h-auto  relative`;
+const HeroImg = tw.div`col-span-full row-start-2 w-full  lg:(col-span-6 row-start-1 w-auto) flex flex-col h-auto  relative z-0`;
 const ImgItem = styled(motion.div)`
   ${tw`w-7/12 ml-auto mt-auto mb-16 lg:(w-full ml-0 my-auto) relative animate-bounce-fast`}
   ${css`
@@ -60,6 +60,12 @@ const MobileBgColor = styled.div(props => [
   `,
 ]);
 const Flexbox = tw.div`flex flex-col  justify-end items-end w-full h-full `;
+const ImageProject = styled(motion.img)`
+  ${tw`col-span-full relative z-10 mt-9  animate-bounce-fast`}
+  ${css`
+    min-height: 200px;
+  `}
+`;
 const CaseStudy = () => {
   const { isMobile, isOnlyMobile } = useResponsive();
   return (
@@ -69,7 +75,7 @@ const CaseStudy = () => {
           <Container tw="h-full relative">
             <img src="/assets/pattern/home/bg-hero-circle-black.svg" tw="absolute top-20 -right-1/2 lg:(bottom-0 right-0 top-6)" alt="" />
             <img src="/assets/pattern/home/eclipse-triple.svg" tw="hidden lg:block absolute right-44 top-3/4 animate-bounce-slow z-10 h-20" alt="" />
-            <Grid tw="h-4/6 sm:h-full ">
+            <Grid tw="h-full ">
               <InView>
                 {({ inView, ref }) => (
                   <Caption ref={ref} variants={StaggerChild} animate={inView && 'show'} initial="hidden">
@@ -94,6 +100,7 @@ const CaseStudy = () => {
                         </ButtonOutline>
                       )}
                     </WrapCase>
+                    {isOnlyMobile && <ImageProject src={listCases.img} alt={listCases.name} />}
                   </Caption>
                 )}
               </InView>

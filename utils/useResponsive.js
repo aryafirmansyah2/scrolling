@@ -18,6 +18,9 @@ function useResponsive() {
   const isDekstop = useMediaQuery({
     minWidth: '1024px',
   });
+  const isBigDekstop = useMediaQuery({
+    minWidth: '1280px',
+  });
 
   useEffect(() => {
     if (typeof window !== 'undefined') setIsClient(true);
@@ -25,6 +28,7 @@ function useResponsive() {
 
   return {
     isDekstop: isClient ? isDekstop : false,
+    isBigDekstop: isClient ? isBigDekstop : false,
     isTablet: isClient ? isTablet : false,
     isMobile: isClient ? isMobile : true,
     isOnlyMobile: isClient ? isOnlyMobile : false,
