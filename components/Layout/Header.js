@@ -62,24 +62,24 @@ const Header = () => {
   const router = useRouter();
   const [showNavbar, setShowNavbar] = useState(false);
   const [scrollActive, setScrollActive] = useState(false);
-  useEffect(() => {
-    window.addEventListener('scroll', () => {
-      if (window.pageYOffset > 40) {
-        document.getElementById('navbar').style.display = 'invisible';
-      } else {
-        document.getElementById('navbar').style.display = 'visible';
-      }
-      // setScrollActive(window.scrollY > 40);
-    });
-    // 20 is an arbitrary number here, just to make you think if you need the prevScrollpos variable:
-    // if (currentScrollPos > 20) {
-    //   // I am using 'display' instead of 'top':
-    //   document.getElementById('navbar').style.display = 'invisible';
-    // } else {
-    //   document.getElementById('navbar').style.display = 'visible';
-    // }
-    console.log('offset ', window.pageYOffset);
-  }, [pageYOffset]);
+  // useEffect(() => {
+  //   window.addEventListener('scroll', () => {
+  //     if (window.pageYOffset > 40) {
+  //       document.getElementById('navbar').style.display = 'invisible';
+  //     } else {
+  //       document.getElementById('navbar').style.display = 'visible';
+  //     }
+  //     // setScrollActive(window.scrollY > 40);
+  //   });
+  //   // 20 is an arbitrary number here, just to make you think if you need the prevScrollpos variable:
+  //   // if (currentScrollPos > 20) {
+  //   //   // I am using 'display' instead of 'top':
+  //   //   document.getElementById('navbar').style.display = 'invisible';
+  //   // } else {
+  //   //   document.getElementById('navbar').style.display = 'visible';
+  //   // }
+  //   console.log('offset ', window.pageYOffset);
+  // }, [pageYOffset]);
 
   return (
     <>

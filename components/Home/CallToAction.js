@@ -19,7 +19,7 @@ const Section = styled.div`
 const WrapTitle = tw.div`w-full lg:w-8/12 mx-auto py-8 xl:py-16 relative z-10 flex items-center justify-center  xl:h-40 2xl:h-52`;
 const Title = tw(motion.h2)`text-white font-woodland text-6xl text-center font-bold cursor-pointer `;
 const Flex = styled(motion.div)`
-  ${tw`flex items-center mx-auto  w-full gap-4 sm:(w-10/12 gap-8 mx-auto) md:(w-full justify-center) hover:justify-between`}
+  ${tw`flex items-center mx-auto transition-all duration-200 ease-in-out  w-full gap-4 sm:(w-10/12 gap-8 mx-auto) md:(w-full justify-center) hover:justify-between`}
   &:hover {
     h2 {
       ${tw`hidden`}

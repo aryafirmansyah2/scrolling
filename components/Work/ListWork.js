@@ -13,11 +13,16 @@ import FadeInBottom from '../Animations/FadeInBottom';
 import { motion } from 'framer-motion';
 import StaggerChild from '../Animations/StaggerChild';
 import FadeInLeft from '../Animations/FadeInLeft';
+import { InView } from 'react-intersection-observer';
 
 const Section = tw.section`w-full bg-white pt-20 pb-10 sm:py-32`;
 const Title = tw(HeadingOne)`text-brown-gold col-span-full text-center mt-12 mb-10 sm:(mt-28 mb-20)`;
 const Filter = tw(motion.div)`col-span-full flex gap-3 sm:gap-0 flex-wrap sm:flex-nowrap mb-4`;
-const FilterItem = HeadingTwo.withComponent('button');
+const FilterHeading = styled(HeadingTwo)`
+  ${tw` px-2 mx-2 text-2xl sm:(px-0 text-5xl) transition-all focus:outline-none`}
+  ${props => (props.active ? tw`text-black ` : tw`text-gray-300`)}
+`;
+const FilterItem = FilterHeading.withComponent('button');
 const WrapGallery = tw.div`col-span-full `;
 const Gallery = styled(motion.div)`
   ${tw`flex flex-wrap flex-col -mx-4 `}
@@ -144,57 +149,49 @@ const ListWork = () => {
             Our Works
           </Title>
           <Filter variants={StaggerChild} initial="hidden" animate="show">
-            <FilterItem as={motion.button} variants={FadeInLeft} isCommon tw="text-black px-2 mx-2 text-2xl sm:(px-0 text-5xl)" onClick={handleFilterAll}>
+            <FilterItem as={motion.button} active={filterWork === 'all'} variants={FadeInLeft} isCommon onClick={handleFilterAll}>
               Show All
             </FilterItem>
-            <FilterItem as={motion.button} variants={FadeInLeft} isCommon tw="text-gray-300 px-2 mx-2 text-2xl sm:(px-0 text-5xl)" onClick={handleFilterWebsite}>
+            <FilterItem as={motion.button} active={filterWork === 'website'} variants={FadeInLeft} isCommon onClick={handleFilterWebsite}>
               Website
             </FilterItem>
-            <FilterItem as={motion.button} variants={FadeInLeft} isCommon tw="text-gray-300 px-2 mx-2 text-2xl sm:(px-0 text-5xl)" onClick={handleFilterMobile}>
+            <FilterItem as={motion.button} active={filterWork === 'mobile'} variants={FadeInLeft} isCommon onClick={handleFilterMobile}>
               Mobile Apps
             </FilterItem>
-            <FilterItem as={motion.button} variants={FadeInLeft} isCommon tw="text-gray-300 px-2 mx-2 text-2xl sm:(px-0 text-5xl)" onClick={handleFilterDesign}>
+            <FilterItem as={motion.button} active={filterWork === 'design'} variants={FadeInLeft} isCommon onClick={handleFilterDesign}>
               UI/UX Design
             </FilterItem>
           </Filter>
           <WrapGallery>
             {isDekstop ? (
               <>
-                {/* <Gallery variants={StaggerChild} initial="hidden" animate="show">
-                {listProject.map((listProjects, index) => (
-                  <Item variants={FadeInBottom} key={index}>
-                    <WrapImg isLong={listProjects.scale === 'long'} isShort={listProjects.scale === 'short'}>
-                      <Img src={listProjects.img} layout="fill" objectFit="cover" />
-                    </WrapImg>
-                    <Subtitle isCommon>{listProjects.name}</Subtitle>
-                    <TitleProject isCommon>{listProjects.subname}</TitleProject>
-                  </Item>
-                ))}
-              </Gallery> */}
-
-                <Gallery variants={StaggerChild} initial="hidden" animate="show" filterWork={filterWork}>
-                  {filterWork === 'all'
-                    ? listProject.map(filteredProject => (
-                        <Item variants={FadeInBottom}>
-                          <WrapImg isLong={filteredProject.scale === 'long'} isShort={filteredProject.scale === 'short'}>
-                            <Img src={filteredProject.img} layout="fill" objectFit="cover" />
-                          </WrapImg>
-                          <Subtitle isCommon>{filteredProject.name}</Subtitle>
-                          <TitleProject isCommon>{filteredProject.subname}</TitleProject>
-                        </Item>
-                      ))
-                    : listProject
-                        .filter(listProject => listProject.label === filterWork)
-                        .map(filteredProject => (
-                          <Item variants={FadeInBottom}>
-                            <WrapImg isLong={filteredProject.scale === 'long'} isShort={filteredProject.scale === 'short'}>
-                              <Img src={filteredProject.img} layout="fill" objectFit="cover" />
-                            </WrapImg>
-                            <Subtitle isCommon>{filteredProject.name}</Subtitle>
-                            <TitleProject isCommon>{filteredProject.subname}</TitleProject>
-                          </Item>
-                        ))}
-                </Gallery>
+                <InView>
+                  {({ inView, ref }) => (
+                    <Gallery ref={ref} variants={StaggerChild} initial="hidden" animate={inView && 'show'} filterWork={filterWork}>
+                      {filterWork === 'all'
+                        ? listProject.map(filteredProject => (
+                            <Item ref={ref} variants={FadeInBottom} animate={inView && 'show'} initial="hidden">
+                              <WrapImg isLong={filteredProject.scale === 'long'} isShort={filteredProject.scale === 'short'}>
+                                <Img src={filteredProject.img} layout="fill" objectFit="cover" />
+                              </WrapImg>
+                              <Subtitle isCommon>{filteredProject.name}</Subtitle>
+                              <TitleProject isCommon>{filteredProject.subname}</TitleProject>
+                            </Item>
+                          ))
+                        : listProject
+                            .filter(listProject => listProject.label === filterWork)
+                            .map(filteredProject => (
+                              <Item variants={FadeInBottom}>
+                                <WrapImg isLong={filteredProject.scale === 'long'} isShort={filteredProject.scale === 'short'}>
+                                  <Img src={filteredProject.img} layout="fill" objectFit="cover" />
+                                </WrapImg>
+                                <Subtitle isCommon>{filteredProject.name}</Subtitle>
+                                <TitleProject isCommon>{filteredProject.subname}</TitleProject>
+                              </Item>
+                            ))}
+                    </Gallery>
+                  )}
+                </InView>
               </>
             ) : (
               <GalleryMobile>

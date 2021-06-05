@@ -93,7 +93,7 @@ const FooterHome = () => {
           </a>
         </span>
       </Container>
-      <hr tw=" border-black w-full mt-8" />
+      <hr tw=" border-black w-full mt-8 sm:mt-0" />
       <Container tw="py-4 sm:(pt-10 pb-8) ">
         <Flex tw="flex-col lg:flex-row ">
           <p tw="text-xs sm:text-base font-normal text-gray-400">2021 INAGATA TECHNOSMITH. All Rights Reserved.</p>
