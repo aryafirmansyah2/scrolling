@@ -1,6 +1,6 @@
 import useResponsive from '@/utils/useResponsive';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
+
 import React from 'react';
 import tw, { styled, css } from 'twin.macro';
 import FadeInBottom from '../Animations/FadeInBottom';
@@ -27,7 +27,7 @@ const ImgHero = styled.div`
     }
   `}
 `;
-const Img = tw(Image)`h-full w-full object-cover animate-bounce-slow`;
+const Img = tw.img`h-full w-full object-contain animate-bounce-slow`;
 
 const HeroContact = () => {
   const { isDekstop } = useResponsive();
@@ -47,7 +47,7 @@ const HeroContact = () => {
             </Subtitle>
           </Caption>
           <ImgHero>
-            <Img src="/assets/content/hero-contact-1.png" layout="fill" objectFit="contain" quality={100} />
+            <Img src="/assets/content/hero-contact-1.png" alt="Contact" />
           </ImgHero>
         </Grid>
       </Container>

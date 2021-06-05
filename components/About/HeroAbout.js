@@ -6,13 +6,13 @@ import useResponsive from '@/utils/useResponsive';
 
 import HeadingFour from '../Typography/HeadingFour';
 import HeadingThree from '../Typography/HeadingThree';
-import Image from 'next/image';
+
 import StaggerChild from '../Animations/StaggerChild';
 import { motion } from 'framer-motion';
 import FadeInBottom from '../Animations/FadeInBottom';
 
 const Section = tw.section`h-screen w-full relative bg-white`;
-const WrapExperience = tw.div`col-span-full row-start-1`;
+
 const WrapTitle = tw.div`col-span-full mt-4 sm:mt-0 lg:col-span-7 flex flex-col h-full justify-end`;
 const Title = tw(motion.h1)`font-bold font-common text-5.5xl sm:text-10xl leading-none lg:mt-28 text-black`;
 const Service = tw(motion.div)`flex items-end mt-auto sm:mb-12 lg:(items-center mb-0)`;
@@ -40,20 +40,20 @@ const ImgContainer = styled.div`
     }
   `}
 `;
-const Img = tw(Image)``;
+const Img = tw.img``;
 const HeroAbout = () => {
-  const { isOnlyMobile, isDekstop, isMobile } = useResponsive();
+  const { isDekstop, isMobile } = useResponsive();
   return (
     <Section id="about">
       <Container tw="h-full relative">
         {isMobile ? (
           <>
             {' '}
-            <img src="/assets/pattern/about/eclipse.svg" tw="absolute bottom-0 -right-36 top-0" alt="" />
-            <img src="/assets/pattern/about/bg.svg" tw="absolute left-48 -top-2 " alt="" />
+            <img src="/assets/pattern/about/eclipse.svg" tw="absolute bottom-0 -right-36 top-0" alt="pattern" />
+            <img src="/assets/pattern/about/bg.svg" tw="absolute left-48 -top-2 " alt="pattern" />
           </>
         ) : (
-          <img src="/assets/pattern/about/eclipse-full.svg" tw="absolute -left-28 top-10 " alt="" />
+          <img src="/assets/pattern/about/eclipse-full.svg" tw="absolute -left-28 top-10 " alt="pattern" />
         )}
 
         <Grid tw="pt-20 sm:pt-44 pb-24 lg:py-24 h-full" variants={StaggerChild} animate="show" initial="hidden">
@@ -76,7 +76,7 @@ const HeroAbout = () => {
               </Service>
               <WrapImg tw="col-span-7 col-end-13 row-start-1 sm:(col-span-6 row-start-1)">
                 <ImgContainer>
-                  <Img src="/assets/content/hero-about-1.png" layout="responsive" height={416} width={400} objectFit="contain" quality={100} />
+                  <Img src="/assets/content/hero-about-1.png" alt="About" />
                 </ImgContainer>
               </WrapImg>
             </>
@@ -109,7 +109,7 @@ const HeroAbout = () => {
           {isDekstop && (
             <WrapImg>
               <ImgContainer>
-                <Img src="/assets/content/hero-about-1.png" layout="fill" objectFit="contain" quality={100} />
+                <Img src="/assets/content/hero-about-1.png" alt="About" />
               </ImgContainer>
             </WrapImg>
           )}

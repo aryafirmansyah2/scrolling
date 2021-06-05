@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import React from 'react';
 import tw, { styled, css } from 'twin.macro';
 import Container from '../Common/Container';
@@ -7,7 +6,6 @@ import Grid from '../Common/Grid';
 import IconLike from '@/assets/icon/like.svg';
 import IconArrow from '@/assets/icon/arrow-fill-down.svg';
 
-import HeadingOne from '../Typography/HeadingOne';
 import TextBody from '../Typography/TextBody';
 import HeadingFive from '../Typography/HeadingFive';
 import listCase from '@/data/listCase';
@@ -30,7 +28,7 @@ const ButtonOutline = tw.button`w-72 h-14 border text-2xl mb-6 sm:(text-xl mb-0 
 
 const HeroImg = tw.div`col-span-full row-start-2 w-full  lg:(col-span-6 row-start-1 w-auto) flex flex-col h-auto  relative z-0`;
 const ImgItem = styled(motion.div)`
-  ${tw`w-7/12 ml-auto mt-auto mb-16 lg:(w-full ml-0 my-auto) relative animate-bounce-fast`}
+  ${tw`w-7/12 ml-auto mt-auto mb-16 lg:(w-full ml-0 my-auto) relative animate-bounce-fast object-cover overflow-hidden`}
   ${css`
     height: 20rem;
     @media only screen and (min-width: 1024px) {
@@ -38,7 +36,7 @@ const ImgItem = styled(motion.div)`
     }
   `}
 `;
-const Img = tw(Image)``;
+const Img = tw.img`w-full h-full`;
 const BgColor = styled.div(props => [
   tw`absolute bottom-0 -right-10 w-full lg:(top-10 -right-4 w-10/12)  rounded-2xl`,
   css`
@@ -100,7 +98,7 @@ const CaseStudy = () => {
                         </ButtonOutline>
                       )}
                     </WrapCase>
-                    {isOnlyMobile && <ImageProject src={listCases.img} alt={listCases.name} />}
+                    {isOnlyMobile && <ImageProject loading="lazy" src={listCases.img} alt={listCases.name} />}
                   </Caption>
                 )}
               </InView>
@@ -109,7 +107,7 @@ const CaseStudy = () => {
                 <HeroImg>
                   <BgColor bgColor={listCases.color} />
                   <ImgItem>
-                    <Img src={listCases.img} layout="fill" objectFit="fill" quality={100} />
+                    <Img src={listCases.img} alt={listCases.name} loading="lazy" />
                   </ImgItem>
                   <ButtonDown>
                     <IconArrow tw="h-6 w-6 fill-current text-black z-10 animate-bounce" />

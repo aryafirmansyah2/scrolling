@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 import tw, { styled, css } from 'twin.macro';
 import Container from '../Common/Container';
@@ -92,33 +91,16 @@ const WrapImg = styled.div(({ isLong, isShort }) => [
       }
     `,
 ]);
-const Img = tw(Image)`w-full h-full`;
+const Img = tw.img`w-full h-full object-fill overflow-hidden`;
 const Subtitle = tw(HeadingFour)`text-gray-300 uppercase mt-7`;
 const TitleProject = tw(HeadingTwo)`text-black capitalize`;
 
 const GalleryMobile = tw.div`flex flex-col`;
 const ItemMobile = tw.div`flex flex-col w-full mb-10 sm:mb-20`;
 
-const ListWorkComponent = ({ listProject }) => {
-  return (
-    <Gallery variants={StaggerChild} initial="hidden" animate="show">
-      {listProject.map(listProject => (
-        <Item variants={FadeInBottom}>
-          <WrapImg isLong={filteredProject.scale === 'long'} isShort={filteredProject.scale === 'short'}>
-            <Img src={filteredProject.img} layout="fill" objectFit="cover" />
-          </WrapImg>
-          <Subtitle isCommon>{filteredProject.name}</Subtitle>
-          <TitleProject isCommon>{filteredProject.subname}</TitleProject>
-        </Item>
-      ))}
-    </Gallery>
-  );
-};
-
 const ListWork = () => {
   const { isDekstop } = useResponsive();
   const [filterWork, setFilterWork] = useState('all');
-  const [filteredWork, setFilteredWork] = useState({});
 
   const handleFilterAll = e => {
     e.preventDefault();
@@ -172,7 +154,7 @@ const ListWork = () => {
                         ? listProject.map(filteredProject => (
                             <Item ref={ref} variants={FadeInBottom} animate={inView && 'show'} initial="hidden">
                               <WrapImg isLong={filteredProject.scale === 'long'} isShort={filteredProject.scale === 'short'}>
-                                <Img src={filteredProject.img} layout="fill" objectFit="cover" />
+                                <Img src={filteredProject.img} alt={filteredProject.subname} />
                               </WrapImg>
                               <Subtitle isCommon>{filteredProject.name}</Subtitle>
                               <TitleProject isCommon>{filteredProject.subname}</TitleProject>
@@ -183,7 +165,7 @@ const ListWork = () => {
                             .map(filteredProject => (
                               <Item variants={FadeInBottom}>
                                 <WrapImg isLong={filteredProject.scale === 'long'} isShort={filteredProject.scale === 'short'}>
-                                  <Img src={filteredProject.img} layout="fill" objectFit="cover" />
+                                  <Img src={filteredProject.img} alt={filteredProject.subname} />
                                 </WrapImg>
                                 <Subtitle isCommon>{filteredProject.name}</Subtitle>
                                 <TitleProject isCommon>{filteredProject.subname}</TitleProject>
@@ -198,7 +180,7 @@ const ListWork = () => {
                 {listProject.map((listProjects, index) => (
                   <ItemMobile key={index}>
                     <WrapImg isLong={listProjects.scale === 'long'} isShort={listProjects.scale === 'short'}>
-                      <Img src={listProjects.img} layout="fill" objectFit="cover" />
+                      <Img src={listProjects.img} alt={listProjects.subname} />
                     </WrapImg>
                     <Subtitle isCommon>{listProjects.name}</Subtitle>
                     <TitleProject isCommon tw="font-semibold sm:font-normal">

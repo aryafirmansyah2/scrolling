@@ -46,28 +46,21 @@ const Collaboration = () => {
         <InView>
           {({ inView, ref }) => (
             <Grid tw="gap-y-16" ref={ref} variants={StaggerChild} animate={inView && 'show'} initial="hidden">
-              <Link href={urlPartner} passHref>
-                <ButtonCta tw="col-start-1" variants={FadeInBottom}>
-                  <Title isWoodland>I’m a partner</Title>
-                  <Subtitle isNormal>fill out a simple form</Subtitle>
-                </ButtonCta>
-              </Link>
-              <Link href={urlIntership} passHref>
-                <ButtonCta tw="col-end-13" variants={FadeInBottom}>
-                  <Title isWoodland>Intership Program</Title>
-                  <Subtitle isNormal>Requirement & Downloadebles</Subtitle>
-                </ButtonCta>
-              </Link>
-              <Link href={urlCarrier} passHref>
-                <ButtonCta tw="col-start-1 lg:row-start-2" variants={FadeInBottom}>
-                  <Title isWoodland>Carier</Title>
-                </ButtonCta>
-              </Link>
-              <Link href={urlCarrier} passHref>
-                <ButtonCta tw="col-end-13 lg:row-start-2" variants={FadeInBottom}>
-                  <Title isWoodland>Talks & Workshop</Title>
-                </ButtonCta>
-              </Link>
+              <ButtonCta tw="col-start-1" href={urlPartner} variants={FadeInBottom}>
+                <Title isWoodland>I’m a partner</Title>
+                <Subtitle isNormal>fill out a simple form</Subtitle>
+              </ButtonCta>
+              <ButtonCta tw="col-end-13" href={urlIntership} variants={FadeInBottom}>
+                <Title isWoodland>Intership Program</Title>
+                <Subtitle isNormal>Requirement & Downloadebles</Subtitle>
+              </ButtonCta>
+              <ButtonCta tw="col-start-1 lg:row-start-2" href={urlCarrier} variants={FadeInBottom}>
+                <Title isWoodland>Carier</Title>
+              </ButtonCta>
+              <ButtonCta tw="col-end-13 lg:row-start-2" href={urlCarrier} variants={FadeInBottom}>
+                <Title isWoodland>Talks & Workshop</Title>
+              </ButtonCta>
+
               <Maping>
                 <LoadScript googleMapsApiKey="AIzaSyBMLfSV2-Zypo78G2yuPP94tPfy9PPZYAA">
                   <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={15}>

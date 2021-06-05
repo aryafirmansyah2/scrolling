@@ -1,6 +1,6 @@
 import React from 'react';
 import tw, { styled, css } from 'twin.macro';
-import Image from 'next/image';
+
 import { motion } from 'framer-motion';
 
 import Container from '../Common/Container';
