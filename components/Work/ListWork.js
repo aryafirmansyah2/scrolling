@@ -9,7 +9,7 @@ import HeadingTwo from '../Typography/HeadingTwo';
 import listProject from '@/data/listProject';
 import useResponsive from '@/utils/useResponsive';
 import FadeInBottom from '../Animations/FadeInBottom';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import StaggerChild from '../Animations/StaggerChild';
 import FadeInLeft from '../Animations/FadeInLeft';
 import { InView } from 'react-intersection-observer';
@@ -146,13 +146,13 @@ const ListWork = () => {
           </Filter>
           <WrapGallery>
             {isDekstop ? (
-              <>
+              <AnimatePresence onExitComplete>
                 <InView>
                   {({ inView, ref }) => (
                     <Gallery ref={ref} variants={StaggerChild} initial="hidden" animate={inView && 'show'} filterWork={filterWork}>
                       {filterWork === 'all'
                         ? listProject.map(filteredProject => (
-                            <Item ref={ref} variants={FadeInBottom} animate={inView && 'show'} initial="hidden">
+                            <Item variants={FadeInBottom}>
                               <WrapImg isLong={filteredProject.scale === 'long'} isShort={filteredProject.scale === 'short'}>
                                 <Img src={filteredProject.img} alt={filteredProject.subname} />
                               </WrapImg>
@@ -174,7 +174,7 @@ const ListWork = () => {
                     </Gallery>
                   )}
                 </InView>
-              </>
+              </AnimatePresence>
             ) : (
               <GalleryMobile>
                 {listProject.map((listProjects, index) => (
