@@ -87,8 +87,8 @@ const CallToAction = () => {
                   </Flex>
                 </AnimatePresence>
               ) : (
-                <Flex>
-                  <LinkCta variants={FadeInBottom} animate={inView && 'show'} initial="hidden">
+                <Flex tw=" justify-between">
+                  <LinkCta href="" variants={FadeInBottom} animate={inView && 'show'} initial="hidden">
                     Email
                   </LinkCta>
                   <LinkCta variants={FadeInBottom} animate={inView && 'show'} initial="hidden">
