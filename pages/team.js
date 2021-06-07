@@ -1,17 +1,15 @@
 import CallToAction from '@/components/Home/CallToAction';
 import Layout from '@/components/Layout/Layout';
+import { Metahead } from '@/components/Metahead';
 import HeroTeam from '@/components/Team/HeroTeam';
 import ListTeam from '@/components/Team/ListTeam';
-import Head from 'next/head';
+
 import React from 'react';
 
 const Team = () => {
   return (
     <>
-      <Head>
-        <title>Inagata Landingpage</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <Metahead title="Inagata Technosmith | Teampage" />
       <Layout>
         <HeroTeam />
         <ListTeam />

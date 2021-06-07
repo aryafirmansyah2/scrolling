@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import React from 'react';
 
 import Collaboration from '@/components/Contact/Collaboration';
@@ -6,14 +5,12 @@ import HeroContact from '@/components/Contact/HeroContact';
 import Identity from '@/components/Contact/Identity';
 import CallToAction from '@/components/Home/CallToAction';
 import Layout from '@/components/Layout/Layout';
+import { Metahead } from '@/components/Metahead';
 
 const Contact = () => {
   return (
     <>
-      <Head>
-        <title>Inagata Landingpage</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <Metahead title="Inagata Technosmith | Contact Page" />
       <Layout>
         <HeroContact />
         <Identity />

@@ -1,17 +1,14 @@
-import Head from 'next/head';
 import React from 'react';
 // component
 import Layout from '@/components/Layout/Layout';
 import ListWork from '@/components/Work/ListWork';
 import CallToAction from '@/components/Home/CallToAction';
+import { Metahead } from '@/components/Metahead';
 
 const Contact = () => {
   return (
     <>
-      <Head>
-        <title>Inagata Landingpage</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <Metahead title="Inagata Technosmith | Portofolio Page" />
       <Layout>
         <ListWork />
         <CallToAction />
