@@ -67,9 +67,10 @@ const Header = () => {
   const handleScroll = () => {
     const currentScrollPos = window.pageYOffset;
 
-    setVisible(currentScrollPos > prevScrollPos);
+    setVisible(currentScrollPos < prevScrollPos || currentScrollPos < 50);
 
     setPrevScrollPos(currentScrollPos);
+    console.log('Scroll ', currentScrollPos < 50);
     // console.log('PageYOffset ', currentScrollPos);
     // console.log('previsus ', prevScrollPos);
   };
@@ -82,7 +83,7 @@ const Header = () => {
 
   return (
     <>
-      <Nav id="navbar" css={[visible ? tw`opacity-0 h-0 mt-0 invisible` : tw`h-auto opacity-100 mt-1 visible`]}>
+      <Nav id="navbar" css={[visible ? tw`h-auto opacity-100 mt-1 visible` : tw` opacity-0 h-0 mt-0 invisible`]}>
         <Container>
           <Flex>
             <Link href="/">
