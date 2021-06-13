@@ -18,7 +18,7 @@ const Section = styled.div`
 `;
 const WrapTitle = tw.div`w-full h-full flex justify-center items-center py-8 mt-4 sm:(py-16 mt-12) lg:mt-0`;
 const Title = tw(motion.h2)`font-bold text-2xl sm:text-5xl leading-normal text-black font-woodland text-center`;
-const StimulusAds = () => {
+const StimulusAds = ({ show }) => {
   const { isDekstop } = useResponsive();
 
   return (
@@ -26,7 +26,7 @@ const StimulusAds = () => {
       <Container tw="my-auto">
         <InView>
           {(inView, ref) => (
-            <WrapTitle ref={ref}>
+            <WrapTitle ref={ref} css={[show ? tw`block ` : tw`block xl:hidden`]}>
               {isDekstop ? (
                 <Title variants={FadeInBottom} animate={inView && 'show'} initial="hidden">
                   come with us to create your digital experience

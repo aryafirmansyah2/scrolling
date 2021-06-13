@@ -1,4 +1,5 @@
 import CallToAction from '@/components/Home/CallToAction';
+import StimulusAds from '@/components/Home/StimulusAds';
 import Layout from '@/components/Layout/Layout';
 import { Metahead } from '@/components/Metahead';
 import HeroTeam from '@/components/Team/HeroTeam';
@@ -13,6 +14,7 @@ const Team = () => {
       <Layout>
         <HeroTeam />
         <ListTeam />
+        <StimulusAds show={false} />
         <CallToAction />
       </Layout>
     </>

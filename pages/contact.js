@@ -6,6 +6,7 @@ import Identity from '@/components/Contact/Identity';
 import CallToAction from '@/components/Home/CallToAction';
 import Layout from '@/components/Layout/Layout';
 import { Metahead } from '@/components/Metahead';
+import StimulusAds from '@/components/Home/StimulusAds';
 
 const Contact = () => {
   return (
@@ -15,6 +16,7 @@ const Contact = () => {
         <HeroContact />
         <Identity />
         <Collaboration />
+        <StimulusAds show={false} />
         <CallToAction />
       </Layout>
     </>

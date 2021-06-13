@@ -24,7 +24,7 @@ const Circle = tw(motion.span)`rounded-full bg-blue-700 mr-4 p-2 sm:p-3 lg:(p-4)
 const WrapCase = tw.div`flex flex-col w-full items-start `;
 const Subtitle = tw(motion.p)`text-2xl sm:text-4xl leading-9  font-light mb-2 opacity-75`;
 const Title = tw(motion.h1)`font-normal text-2xl sm:text-8.5xl font-common leading-relaxed`;
-const ButtonOutline = tw.button`w-72 h-14 border text-2xl mb-6 sm:(text-xl mb-0 mt-6) lg:(text-2xl mt-12) rounded-2xl  py-3 px-11   font-normal`;
+const ButtonOutline = tw.a`w-72 h-14 border text-2xl mb-6 sm:(text-xl mb-0 mt-6) lg:(text-2xl mt-12) rounded-2xl  py-3 px-11   font-normal`;
 
 const HeroImg = tw.div`col-span-full row-start-2 w-full  lg:(col-span-6 row-start-1 w-auto) flex flex-col h-auto  relative z-0`;
 const ImgItem = styled(motion.div)`
@@ -93,7 +93,7 @@ const CaseStudy = () => {
                         {listCases.name}
                       </Title>
                       {isMobile && (
-                        <ButtonOutline tw="text-black border-black" as={motion.button} variants={FadeInLeft}>
+                        <ButtonOutline href={listCases.behance} target="_blank" tw="text-black border-black" as={motion.button} variants={FadeInLeft}>
                           Read on behance
                         </ButtonOutline>
                       )}
@@ -123,7 +123,7 @@ const CaseStudy = () => {
             <MobileBgColor bgColor={listCases.color}>
               <Flexbox>
                 <NavBottom>
-                  <Link href={listCases.url} passHref>
+                  <Link href={listCases.behance} passHref>
                     <ButtonOutline tw="text-black border-black">Read on behance</ButtonOutline>
                   </Link>
                 </NavBottom>
