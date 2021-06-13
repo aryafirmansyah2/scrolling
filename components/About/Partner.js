@@ -18,23 +18,13 @@ const PartnerCampus = tw(motion.div)`flex flex-wrap justify-between sm:mb-10 lg:
 const PartnerCommunity = tw(motion.div)`flex flex-wrap justify-between items-center sm:mb-10 lg:mb-20`;
 const PartnerCompany = tw(motion.div)`flex flex-wrap justify-between items-center sm:mb-10 lg:mb-20`;
 
-const ItemImage = styled(motion.div)`
-  ${tw`flex-grow-0 flex-shrink-0 mx-6 my-6 sm:(m-0)`}
+const Image = styled.img`
+  ${tw`mx-2 my-2 filter grayscale`}
   ${css`
-    flex-basis: 40%;
-    max-height: 70px;
-
-    @media screen and (min-width: 768px) {
-      flex-basis: 15%;
-    }
+    max-height: 72px;
+    max-width: 130px;
   `}
-  ${props =>
-    props.maxWidth &&
-    css`
-      max-width: 70px;
-    `}
 `;
-const Image = tw.img`w-full h-full`;
 
 const Partner = ({}) => {
   const { isDekstop } = useResponsive();
@@ -84,54 +74,23 @@ const Partner = ({}) => {
               {({ inView, ref }) => (
                 <WrapPartner ref={ref} variants={StaggerChild} animate={inView && 'show'} initial="hidden">
                   <PartnerCampus>
-                    <ItemImage maxWidth variants={FadeInBottom}>
-                      <Image src="/assets/partner/UM.png" alt="Universitas Malang" />
-                    </ItemImage>
-                    <ItemImage maxWidth variants={FadeInBottom}>
-                      <Image src="/assets/partner/UIN.png" alt="UIN Malang" />
-                    </ItemImage>
-                    <ItemImage maxWidth variants={FadeInBottom}>
-                      <Image src="/assets/partner/UB.png" alt="Universitas Brawijaya Malang" />
-                    </ItemImage>
-                    <ItemImage maxWidth variants={FadeInBottom}>
-                      <Image src="/assets/partner/UMM.png" alt="Universitas Muhammadiyah Malang" />
-                    </ItemImage>
+                    <Image src="/assets/partner/mobile/UM.png" alt="Universitas Malang" />
+                    <Image src="/assets/partner/mobile/UB.png" alt="Universitas Malang" />
+                    <Image src="/assets/partner/mobile/UIN.png" alt="Universitas Malang" />
+                    <Image src="/assets/partner/mobile/UMM.png" alt="Universitas Malang" />
+                    <Image src="/assets/partner/mobile/TELKOM.png" alt="Universitas Malang" />
+                    <Image src="/assets/partner/mobile/GONTOR.png" alt="Universitas Malang" />
+                    <Image src="/assets/partner/mobile/SANTOS.png" alt="Universitas Malang" />
+                    <Image src="/assets/partner/mobile/PENSKY.png" alt="Universitas Malang" />
+                    <Image src="/assets/partner/mobile/STASION.png" alt="Universitas Malang" />
+                    <Image src="/assets/partner/mobile/AREMA.png" alt="Universitas Malang" />
+                    <Image src="/assets/partner/mobile/IKITAS.png" alt="Universitas Malang" />
+                    <Image src="/assets/partner/mobile/KEMAE.png" alt="Universitas Malang" />
+                    <Image src="/assets/partner/mobile/MCF.png" alt="Universitas Malang" />
+                    <Image src="/assets/partner/mobile/BNI.png" alt="Universitas Malang" />
+                    <Image src="/assets/partner/mobile/PJB.png" alt="Universitas Malang" />
+                    <Image src="/assets/partner/mobile/BALITBANG.png" alt="Universitas Malang" />
                   </PartnerCampus>
-                  <PartnerCommunity>
-                    <ItemImage tw="order-2 sm:order-1 mx-0" maxWidth variants={FadeInBottom}>
-                      <Image src="/assets/partner/UNIDA.png" alt="UNIDA" />
-                    </ItemImage>
-                    <ItemImage
-                      css={[
-                        tw`flex-none order-1 sm:order-2`,
-                        css`
-                          min-width: 220px;
-                        `,
-                      ]}
-                      maxWidth
-                      variants={FadeInBottom}
-                    >
-                      <img src="/assets/partner/telkom.png" tw="h-16 aspect-w-1" alt="Telkom" />
-                    </ItemImage>
-                    <ItemImage tw="order-3 sm:order-3 mx-0" maxWidth variants={FadeInBottom}>
-                      <img src="/assets/partner/PENSKY.png" tw="h-14 sm:h-16 aspect-w-1" alt="Pensky" />
-                    </ItemImage>
-                    <ItemImage tw="flex-none order-4 mx-0" maxWidth variants={FadeInBottom}>
-                      <img src="/assets/partner/santos.png" alt="Santos" tw="h-14 sm:h-16 aspect-w-1" />
-                    </ItemImage>
-                  </PartnerCommunity>
-                  <PartnerCompany tw="space-y-6 space-x-6 mb-4">
-                    <motion.img variants={FadeInBottom} src="/assets/partner/STASION.png" tw="h-16 aspect-w-1 order-1 " alt="STASION Malang" />
-                    <motion.img variants={FadeInBottom} src="/assets/partner/IKITAS.png" tw="h-8 aspect-w-1 order-3 sm:order-2" alt="IKITAS " />
-                    <motion.img variants={FadeInBottom} src="/assets/partner/AREMA.png" tw="h-16 aspect-w-1 order-4 sm:order-3" alt="Arema" />
-                    <motion.img variants={FadeInBottom} src="/assets/partner/MCF.png" tw="h-16 aspect-w-1 order-2 sm:order-4" alt="Malang Creative Fusion" />
-                  </PartnerCompany>
-                  <PartnerCompany tw="space-y-6 space-x-6 justify-evenly sm:justify-between">
-                    <motion.img variants={FadeInBottom} src="/assets/partner/BNI.png" tw="h-10 aspect-w-1" alt="BNI Malang" />
-                    <motion.img variants={FadeInBottom} src="/assets/partner/pjb.png" tw="h-10 aspect-w-1 filter grayscale" alt="PJB" />
-                    <motion.img variants={FadeInBottom} src="/assets/partner/kemae.png" tw="h-10 aspect-w-1" alt="Kemae" />
-                    <motion.img variants={FadeInBottom} src="/assets/partner/balitbang.png" tw="h-10 aspect-w-1" alt="Balitbang" />
-                  </PartnerCompany>
                 </WrapPartner>
               )}
             </InView>
