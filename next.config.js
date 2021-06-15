@@ -1,4 +1,5 @@
 module.exports = {
+  trailingSlash: true,
   webpack: (config, { isServer }) => {
     // Fixes packages that depend on fs/module module
     if (!isServer) {

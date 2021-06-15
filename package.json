@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "next dev ",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "build:html":"next build && next export",
+    "serve": "serve out"
   },
   "dependencies": {
     "@emotion/css": "^11.1.3",
