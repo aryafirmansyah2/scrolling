@@ -74,22 +74,22 @@ const Partner = ({}) => {
               {({ inView, ref }) => (
                 <WrapPartner ref={ref} variants={StaggerChild} animate={inView && 'show'} initial="hidden">
                   <PartnerCampus>
-                    <Image src="/assets/partner/mobile/UM.png" alt="Universitas Malang" />
-                    <Image src="/assets/partner/mobile/UB.png" alt="Universitas Malang" />
-                    <Image src="/assets/partner/mobile/UIN.png" alt="Universitas Malang" />
-                    <Image src="/assets/partner/mobile/UMM.png" alt="Universitas Malang" />
-                    <Image src="/assets/partner/mobile/TELKOM.png" alt="Universitas Malang" />
-                    <Image src="/assets/partner/mobile/GONTOR.png" alt="Universitas Malang" />
-                    <Image src="/assets/partner/mobile/SANTOS.png" alt="Universitas Malang" />
-                    <Image src="/assets/partner/mobile/PENSKY.png" alt="Universitas Malang" />
-                    <Image src="/assets/partner/mobile/STASION.png" alt="Universitas Malang" />
-                    <Image src="/assets/partner/mobile/AREMA.png" alt="Universitas Malang" />
-                    <Image src="/assets/partner/mobile/IKITAS.png" alt="Universitas Malang" />
-                    <Image src="/assets/partner/mobile/KEMAE.png" alt="Universitas Malang" />
-                    <Image src="/assets/partner/mobile/MCF.png" alt="Universitas Malang" />
-                    <Image src="/assets/partner/mobile/BNI.png" alt="Universitas Malang" />
-                    <Image src="/assets/partner/mobile/PJB.png" alt="Universitas Malang" />
-                    <Image src="/assets/partner/mobile/BALITBANG.png" alt="Universitas Malang" />
+                    <Image src="/assets/partner/Mobile/UM.png" alt="Universitas Malang" />
+                    <Image src="/assets/partner/Mobile/UB.png" alt="Universitas Malang" />
+                    <Image src="/assets/partner/Mobile/UIN.png" alt="Universitas Malang" />
+                    <Image src="/assets/partner/Mobile/UMM.png" alt="Universitas Malang" />
+                    <Image src="/assets/partner/Mobile/TELKOM.png" alt="Universitas Malang" />
+                    <Image src="/assets/partner/Mobile/GONTOR.png" alt="Universitas Malang" />
+                    <Image src="/assets/partner/Mobile/SANTOS.png" alt="Universitas Malang" />
+                    <Image src="/assets/partner/Mobile/PENSKY.png" alt="Universitas Malang" />
+                    <Image src="/assets/partner/Mobile/STASION.png" alt="Universitas Malang" />
+                    <Image src="/assets/partner/Mobile/AREMA.png" alt="Universitas Malang" />
+                    <Image src="/assets/partner/Mobile/IKITAS.png" alt="Universitas Malang" />
+                    <Image src="/assets/partner/Mobile/KEMAE.png" alt="Universitas Malang" />
+                    <Image src="/assets/partner/Mobile/MCF.png" alt="Universitas Malang" />
+                    <Image src="/assets/partner/Mobile/BNI.png" alt="Universitas Malang" />
+                    <Image src="/assets/partner/Mobile/PJB.png" alt="Universitas Malang" />
+                    <Image src="/assets/partner/Mobile/BALITBANG.png" alt="Universitas Malang" />
                   </PartnerCampus>
                 </WrapPartner>
               )}
