@@ -8,6 +8,9 @@ const Section = styled.footer`
   ${tw`w-full bg-gray-100 flex flex-col pt-3`}
   ${css`
     ${tw`flex-1`}
+    @screen md {
+      max-height: 50vh;
+    }
     @media screen and (min-width: 1280px) {
       min-width: 420px;
       ${tw`flex-1`}
@@ -24,7 +27,7 @@ const Title = tw.h5`text-sm mb-1 sm:(text-lg mb-3) text-white uppercase `;
 const Flex = tw.div`flex  justify-between`;
 const Menu = tw.a`text-gray-400 text-sm sm:text-lg`;
 const Ecosystem = tw.div`row-start-2 xl:row-start-1 col-span-full xl:col-span-5 col-start-1 sm:pt-2 xl:(col-span-2 col-end-10 pt-0)`;
-const Contact = tw.div`col-span-full text-lg sm:pt-2 xl:(col-span-3 col-end-13 text-base pt-0) flex flex-col`;
+const Contact = tw.div`col-span-full text-lg sm:pt-2 xl:(ml-4 col-span-3 col-end-13 text-base pt-0) flex flex-col`;
 
 const FooterHome = () => {
   return (
@@ -93,22 +96,26 @@ const FooterHome = () => {
           </a>
         </span>
       </Container>
-      <hr tw=" border-black w-full mt-8 sm:mt-0" />
-      <Container tw="py-4 sm:(pt-10 pb-8) ">
-        <Flex tw="flex-col lg:flex-row ">
-          <p tw="text-xs sm:text-base font-normal text-gray-400">2021 INAGATA TECHNOSMITH. All Rights Reserved.</p>
-          <span tw="hidden xl:flex justify-between mt-4 px-4 text-base lg:(justify-evenly mt-0 text-2xl) w-6/12">
-            <a href="" tw="font-semibold uppercase text-sm sm:text-lg opacity-50 text-gray-400 lg:( opacity-100)">
-              Instagram
-            </a>
-            <a href="" tw="font-semibold uppercase text-sm sm:text-lg opacity-50 text-gray-400 lg:( opacity-100)">
-              Dribble
-            </a>
-            <a href="" tw="font-semibold uppercase text-sm sm:text-lg opacity-50 text-gray-400 lg:( opacity-100)">
-              Behance
-            </a>
-          </span>
-        </Flex>
+      <hr tw=" border-black w-full mt-8 sm:mt-auto" />
+      <Container tw="py-4 xl:(pt-10 pb-8) ">
+        <Grid>
+          <div tw="col-span-full xl:(col-span-6 col-start-1)">
+            <p tw="text-sm xl:text-lg font-normal text-gray-400">2021 INAGATA TECHNOSMITH. All Rights Reserved.</p>
+          </div>
+          <div tw="hidden xl:(block col-span-5 col-start-8)">
+            <span tw="flex justify-between mt-4  lg:( mt-0) w-full">
+              <a href="https://www.instagram.com/inagatatechno/" target="_blank" tw="font-semibold uppercase text-sm sm:text-lg opacity-50 text-gray-400 lg:( opacity-100)">
+                Instagram
+              </a>
+              <a href="https://dribbble.com/inagata" target="_blank" tw="font-semibold uppercase text-sm sm:text-lg opacity-50 text-gray-400 lg:( opacity-100)">
+                Dribble
+              </a>
+              <a href="https://www.behance.net/inagatatechno" target="_blank" tw="font-semibold uppercase text-sm sm:text-lg opacity-50 text-gray-400 lg:( opacity-100)">
+                Behance
+              </a>
+            </span>
+          </div>
+        </Grid>
       </Container>
     </Section>
   );

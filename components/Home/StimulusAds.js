@@ -26,7 +26,7 @@ const StimulusAds = ({ show }) => {
       <Container tw="my-auto">
         <InView>
           {(inView, ref) => (
-            <WrapTitle ref={ref} css={[show ? tw`block ` : tw`block xl:hidden`]}>
+            <WrapTitle ref={ref} css={[show ? tw`block lg:(mt-24 flex-grow) xl:(mt-0 flex-none)` : tw`block xl:hidden`]}>
               {isDekstop ? (
                 <Title variants={FadeInBottom} animate={inView && 'show'} initial="hidden">
                   come with us to create your digital experience

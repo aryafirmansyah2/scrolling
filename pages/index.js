@@ -18,7 +18,7 @@ export default function Home() {
           <Hero />
           <CaseStudy />
           <section tw="h-screen flex flex-col pt-20 lg:pt-10">
-            <StimulusAds />
+            <StimulusAds show={true} />
             <CallToAction />
             <FooterHome />
           </section>
