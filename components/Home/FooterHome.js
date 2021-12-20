@@ -61,6 +61,10 @@ const FooterHome = () => {
           <Ecosystem>
             <Title>ECOSYSTEM</Title>
             <p tw="font-medium text-sm sm:text-lg">PT Cipta Media Edutama</p>
+            <p tw="font-medium text-sm sm:text-lg">Inagata Hub</p>
+            <a href="https://hub.inagata.com" tw="text-sm sm:text-base my-1">
+              hub.inagata.com
+            </a>
           </Ecosystem>
           <Contact>
             <Title>CONTACT</Title>
@@ -70,15 +74,15 @@ const FooterHome = () => {
               <br />
               Malang - Indonesia Postal code - 65142 <br />
             </address>
-            <a href="" tw="text-sm my-1 sm:(text-base mb-1 mt-12) lg:my-1">
+            <a href="https://goo.gl/maps/sec6Bc7u4tQtDnQ28" tw="text-sm my-1 sm:(text-base mb-1 mt-12) lg:my-1">
               {' '}
               Get Direction Here
             </a>
             <a href="" tw="text-sm sm:text-base my-1">
               +6281 333 666 937
             </a>
-            <a href="" tw="text-sm sm:text-base my-1">
-              info@inagata.com
+            <a href="mailto:contact@inagata.com" tw="text-sm sm:text-base my-1">
+              contact@inagata.com
             </a>
           </Contact>
         </WidgetFooter>

@@ -72,13 +72,13 @@ const CallToAction = () => {
               {isBigDekstop ? (
                 <AnimatePresence onExitComplete>
                   <Flex>
-                    <LinkCta variants={FadeInBottomHover} animate={inView && 'show'} initial="hidden" exit="exit">
+                    <LinkCta href="mailto:contact@inagata.com" variants={FadeInBottomHover} animate={inView && 'show'} initial="hidden" exit="exit">
                       Email
                     </LinkCta>
-                    <LinkCta variants={FadeInBottomHover} animate={inView && 'show'} initial="hidden" exit="exit">
+                    <LinkCta href="http://wa.me/62081333666937" variants={FadeInBottomHover} animate={inView && 'show'} initial="hidden" exit="exit">
                       Whatsapp
                     </LinkCta>
-                    <LinkCta variants={FadeInBottomHover} animate={inView && 'show'} initial="hidden" exit="exit">
+                    <LinkCta href="tel:081333666937" variants={FadeInBottomHover} animate={inView && 'show'} initial="hidden" exit="exit">
                       Phone
                     </LinkCta>
                     <Title variants={FadeInBottomHover} animate={inView && 'show'} initial="hidden" exit="exit">
@@ -88,7 +88,7 @@ const CallToAction = () => {
                 </AnimatePresence>
               ) : (
                 <Flex tw=" justify-between">
-                  <LinkCta href="" variants={FadeInBottom} animate={inView && 'show'} initial="hidden">
+                  <LinkCta variants={FadeInBottom} animate={inView && 'show'} initial="hidden">
                     Email
                   </LinkCta>
                   <LinkCta variants={FadeInBottom} animate={inView && 'show'} initial="hidden">
