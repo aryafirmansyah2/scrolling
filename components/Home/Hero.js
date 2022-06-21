@@ -39,11 +39,11 @@ const Service = tw(motion.div)`flex items-start justify-start`;
 const Work = tw(motion.div)`bg-black-200 rounded-2xl p-3 mr-4 sm:(p-4 mr-7)  `;
 const ServiceCaption = tw(HeadingFour)`text-black`;
 const WrapButton = tw(motion.div)`mt-auto lg:mt-0 w-full flex items-start justify-end`;
-const ButtonDown = tw.div`w-64 h-20 relative flex flex-col  items-center justify-end sm:justify-center`;
+const ButtonDown = tw.div`cursor-pointer w-64 h-20 relative flex flex-col  items-center justify-end sm:justify-center`;
 const ImgButton = tw(motion.img)`absolute bottom-0 left-0 right-0 w-full`;
 
 const ImgCircleBg = styled.img`
-  ${tw`absolute h-auto top-0`}
+  ${tw`absolute top-0 h-auto`}
   ${css`
     height: auto;
     right: -30%;
@@ -53,7 +53,7 @@ const ImgCircleBg = styled.img`
   `}
 `;
 
-const Hero = () => {
+const Hero = (props) => {
   const { isMobile, isOnlyMobile } = useResponsive();
 
   return (
@@ -97,7 +97,7 @@ const Hero = () => {
             )}
 
             <WrapButton variants={StaggerChild} animate="show" initial="hidden">
-              <ButtonDown>
+              <ButtonDown onClick={props.Click}>
                 <ImgButton variants={FadeIn} src="/assets/pattern/subtract.png" tw="h-16 sm:h-20 w-full" />
                 <IconArrow as={motion.svg} variants={FadeIn} tw="h-5 w-5 sm:(h-6 w-6) fill-current text-white z-10 animate-bounce" />
                 <HeadingFive isRegular variants={FadeIn} tw="text-sm mb-1 sm:(text-lg mb-0) z-10 text-white mt-2 ">
